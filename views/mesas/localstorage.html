@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var h, m, s;
+        var runT;
+        window.onload = function () {
+            clearInterval(runT);
+            localStorage.getItem('islog');
+            if (localStorage.getItem("sT") === null) {
+                s = 0;
+            }
+            else {
+                s = Number(localStorage.getItem("sT"));
+
+            }
+            if (localStorage.getItem("mT") === null) {
+                m = 0;
+            }
+            else {
+                m = Number(localStorage.getItem('mT'));
+            }
+            if (localStorage.getItem("hT") === null) {
+                h = 0;
+            }
+            else {
+                h = Number(localStorage.getItem('hT'));
+            }
+            if (localStorage.getItem("offT") !== null && localStorage.getItem('islog') != null) {
+                var oldTime = localStorage.getItem('offT');
+                // var difT = Math.round(((new Date()).getTime() - oldTime) / 1000);
+                // var s2 = 0, m2 = 0, h2 = 0;
+                // h2 = Math.round(difT / 3600);
+                // m2 = Math.round((difT % 3600) / 60);
+                // s2 = Math.round((difT % 3600) % 60);
+                // h += h2;
+                // m += m2;
+                // s += s2;
+                clearInterval(runT);
+                runT = setInterval(countT, 1000)
+                islog = true;
+                // localStorage.setItem("islog", islog);
+                document.getElementsByTagName("input")[0].setAttribute("onclick", "pauseT()")
+            }
+
+            // writeT();
+
+            document.getElementsByTagName("input")[1].value = "Reset";
+
+        }
+        function startT() {
+
+            document.getElementsByTagName("input")[0].setAttribute("onclick", "pauseT()");
+            runT = setInterval(countT, 1000);
+            islog = true;
+            localStorage.setItem("islog", islog);
+        }
+        function countT() {
+            s++;
+            writeT();
+        }
+        function pauseT() {
+            clearInterval(runT);
+            document.getElementsByTagName("input")[0].setAttribute("onclick", "startT()");
+
+            localStorage.removeItem("islog");
+        }
+        function resetT() {
+            clearInterval(runT);
+
+            document.getElementsByTagName("input")[0].setAttribute("onclick", "startT()");
+            localStorage.removeItem("sT");
+            localStorage.removeItem("mT");
+            localStorage.removeItem("hT");
+            localStorage.removeItem("offT");
+            localStorage.removeItem("islog");
+            document.getElementsByTagName("input")[0].value = "00:00:00";
+            s = 0; m = 0; h = 0;
+        }
+        function writeT() {
+            var hAux, mAux, sAux;
+            if (s > 59) { m++; s = 0; }
+            if (m > 59) { h++; m = 0; }
+            if (h > 24) { h = 0; }
+            if (s < 10) { sAux = "0" + s; } else { sAux = s; }
+            if (m < 10) { mAux = "0" + m; } else { mAux = m; }
+            if (h < 10) { hAux = "0" + h; } else { hAux = h; }
+            document.getElementsByTagName("input")[0].value = hAux + ":" + mAux + ":" + sAux;
+            if (s + h + m) {
+                localStorage.setItem('sT', s);
+                localStorage.setItem('mT', m);
+                localStorage.setItem('hT', h);
+                localStorage.setItem('offT', (new Date()).getTime());
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick="startT()">
+    <input type="button" onclick="resetT()">
+</body>
+
+</html>
+
+
+<!-- localStorage.setItem('Hora', h.value);
+localStorage.setItem('Minuto', m.value);
+localStorage.setItem('Segundo', s.value);
+
+const horas = localStorage.getItem('Hora','Minuto','Segundo');
+// m = localStorage.getItem('Minuto');
+// s = localStorage.getItem('Segundo');
+
+localStorage.innerHTML = horas;
+// localStorage.innerHTML = m;
+// localStorage.innerHTML = s; -->

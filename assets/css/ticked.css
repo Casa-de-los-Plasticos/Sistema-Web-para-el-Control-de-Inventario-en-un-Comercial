@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 8px;
+}
+.datos-empresa{
+    text-align: right;
+    font-size: 13px;
+}
+.datos-empresa{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+img{
+    position: absolute;
+    width: 100px;
+    left: 3px;
+    top: 5px;
+}
+.title{
+    text-align: center;
+    padding: 10px;
+}
+
+.datos-info{
+    font-size: 13px;
+}
+
+table,
+th, td, tr{
+    border-bottom: 1px solid black;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table td, th{
+    font-size: 12px;
+    padding: 5px;
+}
+
+.text-right{
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mensaje{
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+}

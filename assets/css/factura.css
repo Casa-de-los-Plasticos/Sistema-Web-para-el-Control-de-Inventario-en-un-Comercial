@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;/* FUENTE DEL REPORTE */
+}
+body{
+    padding: 20px;
+}
+table{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.logo img{
+    width: 50%;
+}
+
+.info-empresa{
+    width: 50%;
+    text-align: center;
+}
+
+.info-compra{
+    width: 25%;
+    margin: 10px;
+}
+.factura{
+    font-size: 12px;
+    display: block;
+    background-color: rgb(50, 50, 240);
+    color: white;
+    text-align: center;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+.container-factura{
+    background: rgb(93, 138, 211);
+    font-size: 14px;
+    border-radius: 10px;
+}
+.container-factura p{
+    padding: 0px 4px 5px;
+}
+.title{
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}
+#container-info{
+    background: rgb(93, 138, 211);
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+#container-info strong{
+    width: 75px;
+    display: inline-block;
+}
+#container-info p{
+    display: inline-block;
+}
+
+#container-producto, tr, th{
+    margin: 0 auto;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+table, th, td{
+    font-size: 14px;
+}
+#container-producto thead th{
+    background: rgb(93, 138, 211);
+    color: white;
+    padding: 5px;
+}
+#container-producto tbody td{
+    padding: 5px;
+}
+#container-producto tr:nth-child(even){
+    background: #ededed;
+}
+
+.total{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.text-right{
+    text-align: right;
+}
+.mensaje{
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+.text-center {
+    text-align: center;
+    justify-content: center;
+}
