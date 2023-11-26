@@ -30,7 +30,6 @@ class IrsModel extends Query{
 
     public function buscarPorDescripcion($valor)
     {
-        // $sql = "SELECT id, descripcion FROM productos WHERE descripcion LIKE '%".$valor."%' AND estado = 1 LIMIT 10";
         $sql = "SELECT id, descripcion FROM productos WHERE descripcion LIKE '%".$valor."%' AND estado = 1 LIMIT 10";
         return $this->selectAll($sql);
     }
