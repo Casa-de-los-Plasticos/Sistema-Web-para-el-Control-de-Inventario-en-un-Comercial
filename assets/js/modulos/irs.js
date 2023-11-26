@@ -141,49 +141,49 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // tblLunes = $('#tblLunes').DataTable({
-    //     ajax: {
-    //         url: base_url + 'irs/listarLunes',
-    //         dataSrc: ''
-    //     },
-    //     columns: [
-    //         { data: 'id' },
-    //         { data: 'codigo' },
-    //         { data: 'descripcion' },
-    //         { data: 'cantidad' },
-    //         { data: 'fecha' },
-    //         { data: 'hora' }
-    //     ],
-    //     language: {
-    //         url: base_url + 'assets/js/espanol.json'
-    //     },
-    //     dom,
-    //     buttons,
-    //     responsive: true,
-    //     order: [[5, 'desc']],
-    // });
+    tblLunes = $('#tblLunes').DataTable({
+        ajax: {
+            url: base_url + 'irs/listarLunes',
+            dataSrc: ''
+        },
+        columns: [
+            // { data: 'id' },
+            { data: 'codigo' },
+            { data: 'descripcion' },
+            { data: 'cantidad' },
+            { data: 'fecha' },
+            { data: 'hora' }
+        ],
+        language: {
+            url: base_url + 'assets/js/espanol.json'
+        },
+        dom,
+        buttons,
+        responsive: true,
+        order: [[3, 'desc']],
+    });
 
-    // tblViernes = $('#tblViernes').DataTable({
-    //     ajax: {
-    //         url: base_url + 'irs/listarViernes',
-    //         dataSrc: ''
-    //     },
-    //     columns: [
-    //         { data: 'id' },
-    //         { data: 'codigo' },
-    //         { data: 'descripcion' },
-    //         { data: 'cantidad' },
-    //         { data: 'fecha' },
-    //         { data: 'hora' }
-    //     ],
-    //     language: {
-    //         url: base_url + 'assets/js/espanol.json'
-    //     },
-    //     dom,
-    //     buttons,
-    //     responsive: true,
-    //     order: [[5, 'desc']],
-    // });
+    tblViernes = $('#tblViernes').DataTable({
+        ajax: {
+            url: base_url + 'irs/listarViernes',
+            dataSrc: ''
+        },
+        columns: [
+            // { data: 'id' },
+            { data: 'codigo' },
+            { data: 'descripcion' },
+            { data: 'cantidad' },
+            { data: 'fecha' },
+            { data: 'hora' }
+        ],
+        language: {
+            url: base_url + 'assets/js/espanol.json'
+        },
+        dom,
+        buttons,
+        responsive: true,
+        order: [[3, 'desc']],
+    });
 
     // Agregar un controlador de eventos al botón "btnCalcularNuevo"
     btnCalcularNuevo.addEventListener("click", function () {

@@ -47,19 +47,19 @@ class Irs extends Controller
         echo json_encode($data);
         die();
     }
-    // public function listarLunes()
-    // {
-    //     $data = $this->model->getLunes();
-    //     echo json_encode($data, JSON_UNESCAPED_UNICODE);
-    //     die();
-    // }
+    public function listarLunes()
+    {
+        $data = $this->model->getLunes();
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
+        die();
+    }
 
-    // public function listarViernes()
-    // {
-    //     $data = $this->model->getViernes();
-    //     echo json_encode($data, JSON_UNESCAPED_UNICODE);
-    //     die();
-    // }
+    public function listarViernes()
+    {
+        $data = $this->model->getViernes();
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
+        die();
+    }
     public function registrar()
     {
         if (isset($_POST['descripcionProducto'])) {

@@ -9,17 +9,17 @@ class IrsModel extends Query{
         return $this->selectAll($sql);
     }
     
-    // public function getLunes()
-    // {
-    //     $sql = "SELECT * FROM historial_cantidad WHERE DAYOFWEEK(fecha) = 2"; 
-    //     return $this->selectAll($sql);
-    // }
+    public function getLunes()
+    {
+        $sql = "SELECT * FROM historial_cantidad WHERE DAYOFWEEK(fecha) = 2"; 
+        return $this->selectAll($sql);
+    }
     
-    // public function getViernes()
-    // {
-    //     $sql = "SELECT * FROM historial_cantidad WHERE DAYOFWEEK(fecha) = 6"; 
-    //     return $this->selectAll($sql);
-    // }
+    public function getViernes()
+    {
+        $sql = "SELECT * FROM historial_cantidad WHERE DAYOFWEEK(fecha) = 6"; 
+        return $this->selectAll($sql);
+    }
 
     public function registrar($descripcionProducto, $fecha_inicial, $fecha_final, $irsNuevo)
     {

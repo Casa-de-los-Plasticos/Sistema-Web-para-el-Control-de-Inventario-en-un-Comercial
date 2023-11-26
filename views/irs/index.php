@@ -246,7 +246,7 @@
                     <table class="table table-striped table-hover align-middle nowrap" id="tblLunes" style="width: 100%;">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <!-- <th>ID</th> -->
                                 <th>Código</th>
                                 <th>Descripción</th>
                                 <th>Cantidad</th>
@@ -268,7 +268,7 @@
                     <table class="table table-striped table-hover align-middle nowrap" id="tblViernes" style="width: 100%;">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <!-- <th>ID</th> -->
                                 <th>Código</th>
                                 <th>Descripción</th>
                                 <th>Cantidad</th>
