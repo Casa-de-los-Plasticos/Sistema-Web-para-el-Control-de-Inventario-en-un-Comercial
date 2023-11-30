@@ -13,8 +13,8 @@ class Irs extends Controller
     public function index()
     {
         $data['title'] = 'IRS';
-        $data['irs'] = 'irs.js';
-        $data['script'] = 'irsconso.js';
+        $data['script'] = 'irs.js';
+        // $data['script'] = 'irsconso.js';
         $this->views->getView('irs', 'index', $data);
     }
     public function listar()
@@ -23,43 +23,19 @@ class Irs extends Controller
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
         die();
     }
+    // public function listarLunes()
+    // {
+    //     $data = $this->model->getLunes();
+    //     echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    //     die();
+    // }
 
-    public function topProductos()
-    {
-        $pagina = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
-        $elementosPorPagina = 15;
-
-        $offset = ($pagina - 1) * $elementosPorPagina;
-
-        $data = $this->model->topProductos($elementosPorPagina, $offset);
-        echo json_encode($data);
-        die();
-    }
-
-    public function topProductosPost()
-    {
-        $pagina = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
-        $elementosPorPagina = 15;
-
-        $offset = ($pagina - 1) * $elementosPorPagina;
-
-        $data = $this->model->topProductosPost($elementosPorPagina, $offset);
-        echo json_encode($data);
-        die();
-    }
-    public function listarLunes()
-    {
-        $data = $this->model->getLunes();
-        echo json_encode($data, JSON_UNESCAPED_UNICODE);
-        die();
-    }
-
-    public function listarViernes()
-    {
-        $data = $this->model->getViernes();
-        echo json_encode($data, JSON_UNESCAPED_UNICODE);
-        die();
-    }
+    // public function listarViernes()
+    // {
+    //     $data = $this->model->getViernes();
+    //     echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    //     die();
+    // }
     public function registrar()
     {
         if (isset($_POST['descripcionProducto'])) {
@@ -92,7 +68,6 @@ class Irs extends Controller
         die();
     }
 
-    // MÉTODO PARA BUSCAR PRODUCTO EN LA PESTAÑA INDICADOR - NUEVO
     public function buscarNombre()
     {
         $array = array();
@@ -100,27 +75,12 @@ class Irs extends Controller
         $data = $this->model->buscarPorDescripcion($valor);
         foreach ($data as $row) {
             $result['id'] = $row['id'];
-            $result['label'] = $row['descripcion']; 
+            $result['label'] = $row['descripcion'];
             array_push($array, $result);
         }
         echo json_encode($array, JSON_UNESCAPED_UNICODE);
         die();
-    }
-
-    public function filtrar()
-    {
-        // Obtener los datos del filtro
-        $productos = $_POST['productos'];
-        $fechaInicio = $_POST['fechaInicio'];
-        $fechaFin = $_POST['fechaFin'];
-
-        // Filtrar en el modelo
-        $data = $this->model->filtrar($productos, $fechaInicio, $fechaFin);
-
-        // Enviar los resultados como JSON
-        echo json_encode($data, JSON_UNESCAPED_UNICODE);
-        die();
-    }
+    } 
 
     function consultar()
     {
@@ -133,5 +93,39 @@ class Irs extends Controller
             echo json_encode($data[0], JSON_UNESCAPED_UNICODE);
             die();
         }
+    }
+
+    // ESTE APARTADO SE ESTÁ DESARROLLANDO HOY 02/11/2023
+    //buscar Productos por nombre
+    // public function buscarPorNombre()
+    // {
+    //     $array = array();
+    //     $valor = $_GET['term'];
+    //     $data = $this->model->buscarPorNombre($valor);
+    //     foreach ($data as $row) {
+    //         $result['id'] = $row['id'];
+    //         $result['label'] = $row['descripcion'];
+    //         // $result['stock'] = $row['cantidad'];
+    //         // $result['precio_venta'] = $row['precio_venta'];
+    //         // $result['precio_compra'] = $row['precio_compra'];
+    //         array_push($array, $result);
+    //     }
+    //     echo json_encode($array, JSON_UNESCAPED_UNICODE);
+    //     die();
+    // }
+    public function buscarPorNombre()
+    {
+        $array = array();
+        $valor = $_GET['term'];
+        $data = $this->model->buscarPorNombre($valor);
+        foreach ($data as $row) {
+            $result['id'] = $row['id'];
+            $result['label'] = $row['codigo'];
+            $result['descripcion'] = $row['descripcion'];
+            // $result['direccion'] = $row['direccion'];
+            array_push($array, $result);
+        }
+        echo json_encode($array, JSON_UNESCAPED_UNICODE);
+        die();
     }
 }
