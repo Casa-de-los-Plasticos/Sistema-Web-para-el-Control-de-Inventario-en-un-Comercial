@@ -8,6 +8,7 @@ const codigo = document.querySelector("#codigo");
 const nombre = document.querySelector("#nombre");
 const precio_compra = document.querySelector("#precio_compra");
 const precio_venta = document.querySelector("#precio_venta");
+const cantidad = document.querySelector("#cantidad");
 const id_medida = document.querySelector("#id_medida");
 const id_categoria = document.querySelector("#id_categoria");
 const id_proveedor = document.querySelector("#id_proveedor");
@@ -134,6 +135,7 @@ function editarProducto(idProducto) {
             nombre.value = res.descripcion;
             // precio_compra.value = res.precio_compra;
             // precio_venta.value = res.precio_venta;
+            cantidad.value = res.cantidad;
             id_medida.value = res.id_medida;
             id_categoria.value = res.id_categoria;
             id_proveedor.value = res.id_proveedor;

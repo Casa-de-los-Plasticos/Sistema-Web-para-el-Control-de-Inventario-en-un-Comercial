@@ -66,7 +66,7 @@
     </div>
 </div>
 
-<div class="col-12 col-lg-12" hidden>
+<!-- <div class="col-12 col-lg-12" hidden>
     <div class="card radius-10">
         <div class="card-body">
             <div class="d-flex align-items-center">
@@ -89,7 +89,6 @@
             <?php } ?>
         </ul>
 
-        <!-- Styles -->
         <style>
             #chartdiv {
                 width: 100%;
@@ -98,9 +97,9 @@
             }
         </style>
     </div>
-</div>
+</div> -->
 
-<div class="row" hidden>
+<!-- <div class="row" hidden>
     <div class="col-12 col-lg-3">
         <div class="card radius-10">
             <div class="card-body">
@@ -200,8 +199,7 @@
             </ul>
         </div>
     </div>
-
-</div>
+</div> -->
 
 <div class="row">
     <div class="col-12 col-lg-6">

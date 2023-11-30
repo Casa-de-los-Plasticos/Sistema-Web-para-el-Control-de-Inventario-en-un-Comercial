@@ -17,28 +17,11 @@ class ProductosModel extends Query
         return $this->selectAll($sql);
     }
 
-
-
-
-
-
-
-
-
-
     public function registrar($codigo, $nombre, $precio_compra, $precio_venta, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $foto) {
         $sql = "INSERT INTO productos (codigo, descripcion, precio_compra, precio_venta, cantidad, fecha, hora, id_medida, id_categoria, id_proveedor, ubicacion, foto) VALUES (?,?,?,?,?,CURDATE(), CURTIME(),?,?,?,?,?)";
         $array = array($codigo, $nombre, $precio_compra, $precio_venta, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $foto);
         return $this->insertar($sql, $array);
     }
-
-
-
-
-
-
-
-
 
     public function getValidar($campo, $valor, $accion, $id)
     {
@@ -63,11 +46,10 @@ class ProductosModel extends Query
         return $this->select($sql);
     }
 
-    public function actualizar($codigo, $nombre, $precio_compra, $precio_venta,
-        $id_medida, $id_categoria, $id_proveedor, $ubicacion, $foto, $id) {
-        $sql = "UPDATE productos SET codigo=?, descripcion=?, precio_compra=?, precio_venta=?, id_medida=?, id_categoria=?, id_proveedor=?, ubicacion=?, foto=? WHERE id=?";
-        $array = array($codigo, $nombre, $precio_compra, $precio_venta,
-            $id_medida, $id_categoria, $id_proveedor, $ubicacion, $foto, $id);
+    public function actualizar($codigo, $nombre, $precio_compra, $precio_venta, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $foto, $id)
+     {
+        $sql = "UPDATE productos SET codigo=?, descripcion=?, precio_compra=?, precio_venta=?, cantidad=?, id_medida=?, id_categoria=?, id_proveedor=?, ubicacion=?, foto=? WHERE id=?";
+        $array = array($codigo, $nombre, $precio_compra, $precio_venta, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $foto, $id);
         return $this->save($sql, $array);
     }
 
