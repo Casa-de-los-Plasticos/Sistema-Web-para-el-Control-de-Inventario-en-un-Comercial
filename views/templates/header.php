@@ -103,14 +103,14 @@
                 </li>
 
                 <?php if ($_SESSION['rol'] == 1) { ?>
-                    <!-- <li>
+                   <li>
                     <a href="<?php echo BASE_URL . 'proveedor'; ?>">
                         <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
                         </div>
                         <div class="menu-title">Proveedores</div>
                     </a>
                 </li>
-                <li>
+                 <!-- <li>
                     <a href="<?php echo BASE_URL . 'ventas'; ?>">
                         <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
                         </div>
@@ -143,15 +143,7 @@
                             <li> <a href="<?php echo BASE_URL . 'irs'; ?>"><i class="bx bx-right-arrow-alt"></i>Índice de Rotación de Stock</a></li>
                         </ul>
                     </li>
-                <?php } ?>
-                <!-- </li> -->
-                <li>
-                    <a href="<?php echo BASE_URL . 'proveedor'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
-                        </div>
-                        <div class="menu-title">Proveedores</div>
-                    </a>
-                </li>
+                <?php } ?> 
                 <li>
                     <a href="<?php echo BASE_URL . 'ventas'; ?>">
                         <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
