@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <!-- morris plugins -->
     <!-- Resources -->
-        <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-        <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-        <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     <!-- morris plugins -->
     <link href="<?php echo BASE_URL; ?>assets/css/pace.min.css" rel="stylesheet" />
     <script src="<?php echo BASE_URL; ?>assets/js/pace.min.js"></script>
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/header-colors.css" />
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/DataTables/datatables.min.css" />z
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/plugins/fullcalendar/css/main.min.css" />
-    
+
     <title><?php echo TITLE . ' - ' . $data['title']; ?></title>
 </head>
 
@@ -62,22 +62,22 @@
                     </a>
                 </li>
                 <?php if ($_SESSION['rol'] == 1) { ?>
-                
-                <li>
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <div class="menu-title">Administración</div>
-                    </a>
-                    <ul>
-                        <li> <a href="<?php echo BASE_URL . 'usuarios'; ?>"><i class="bx bx-right-arrow-alt"></i>Usuarios</a>
-                        </li>
-                        <li> <a href="<?php echo BASE_URL . 'admin/datos'; ?>"><i class="bx bx-right-arrow-alt"></i>Configuracion</a>
-                        </li>
-                        <li> <a href="<?php echo BASE_URL . 'admin/logs'; ?>"><i class="bx bx-right-arrow-alt"></i>Log de Acceso</a>
-                        </li>
-                    </ul>
-                </li>
+
+                    <li>
+                        <a href="javascript:;" class="has-arrow">
+                            <div class="parent-icon"><i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <div class="menu-title">Administración</div>
+                        </a>
+                        <ul>
+                            <li> <a href="<?php echo BASE_URL . 'usuarios'; ?>"><i class="bx bx-right-arrow-alt"></i>Usuarios</a>
+                            </li>
+                            <li> <a href="<?php echo BASE_URL . 'admin/datos'; ?>"><i class="bx bx-right-arrow-alt"></i>Configuracion</a>
+                            </li>
+                            <li> <a href="<?php echo BASE_URL . 'admin/logs'; ?>"><i class="bx bx-right-arrow-alt"></i>Log de Acceso</a>
+                            </li>
+                        </ul>
+                    </li>
                 <?php } ?>
                 <li>
                     <a href="javascript:;" class="has-arrow">
@@ -101,77 +101,72 @@
                         <div class="menu-title">Transportistas</div>
                     </a>
                 </li>
-                <li>
-                    <a href="<?php echo BASE_URL . 'proveedor'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
-                        </div>
-                        <div class="menu-title">Proveedores</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo BASE_URL . 'ventas'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
-                        </div>
-                        <div class="menu-title">Pedido</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo BASE_URL . 'compras'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-truck-fast"></i>
-                        </div>
-                        <div class="menu-title">Ingreso</div>
-                    </a>
-                </li>
+
                 <?php if ($_SESSION['rol'] == 1) { ?>
-                <li>
-                    <a href="<?php echo BASE_URL . 'proveedor'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
-                        </div>
-                        <div class="menu-title">Proveedores</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo BASE_URL . 'ventas'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
-                        </div>
-                        <div class="menu-title">Pedido</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo BASE_URL . 'compras'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-truck-fast"></i>
-                        </div>
-                        <div class="menu-title">Ingreso</div>
-                    </a>
-                </li>
-                <!-- <li>
+                    <li>
+                        <a href="<?php echo BASE_URL . 'proveedor'; ?>">
+                            <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
+                            </div>
+                            <div class="menu-title">Proveedores</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo BASE_URL . 'ventas'; ?>">
+                            <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
+                            </div>
+                            <div class="menu-title">Pedido</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo BASE_URL . 'compras'; ?>">
+                            <div class="parent-icon"><i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div class="menu-title">Ingreso</div>
+                        </a>
+                    </li>
+                    <!-- <li>
                     <a href="<?php echo BASE_URL . 'indicadores'; ?>">
                         <div class="parent-icon"><i class="fa-solid fa-signal"></i></div>
                         <div class="menu-title">Indicadores</div>
                     </a>
                 </li> -->
-                <li>
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class="fa-solid fa-clipboard-list"></i>
-                        </div>
-                        <div class="menu-title">Indicadores</div>
-                    </a>
-                    <ul>
-                        <li> <a href="<?php echo BASE_URL . 'almacen'; ?>"><i class="bx bx-right-arrow-alt"></i>Stock en Almacén</a></li>
-                        <li> <a href="<?php echo BASE_URL . 'tpi'; ?>"><i class="bx bx-right-arrow-alt"></i>Tasa de Precisión de Inventario</a></li>
-                        <li> <a href="<?php echo BASE_URL . 'consolidado'; ?>"><i class="bx bx-right-arrow-alt"></i>Tasa de Precisión de Inventario - Consolidado</a></li>
-                        <li> <a href="<?php echo BASE_URL . 'irs'; ?>"><i class="bx bx-right-arrow-alt"></i>Índice de Rotación de Stock</a></li>
-                    </ul>
-                </li>
+                    <li>
+                        <a href="javascript:;" class="has-arrow">
+                            <div class="parent-icon"><i class="fa-solid fa-clipboard-list"></i>
+                            </div>
+                            <div class="menu-title">Indicadores</div>
+                        </a>
+                        <ul>
+                            <li> <a href="<?php echo BASE_URL . 'almacen'; ?>"><i class="bx bx-right-arrow-alt"></i>Stock en Almacén</a></li>
+                            <li> <a href="<?php echo BASE_URL . 'tpi'; ?>"><i class="bx bx-right-arrow-alt"></i>Tasa de Precisión de Inventario</a></li>
+                            <li> <a href="<?php echo BASE_URL . 'consolidado'; ?>"><i class="bx bx-right-arrow-alt"></i>Tasa de Precisión de Inventario - Consolidado</a></li>
+                            <li> <a href="<?php echo BASE_URL . 'irs'; ?>"><i class="bx bx-right-arrow-alt"></i>Índice de Rotación de Stock</a></li>
+                        </ul>
+                    </li>
                 <?php } ?>
-                <?php if ($_SESSION['rol'] == 1) { ?>
+                </li>
                 <li>
-                    <a href="<?php echo BASE_URL . 'inventarios'; ?>">
-                        <div class="parent-icon"><i class="fa-solid fa-file-lines"></i>
+                    <a href="<?php echo BASE_URL . 'ventas'; ?>">
+                        <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
                         </div>
-                        <div class="menu-title">Movimiento</div>
+                        <div class="menu-title">Pedido</div>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo BASE_URL . 'compras'; ?>">
+                        <div class="parent-icon"><i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <div class="menu-title">Ingreso</div>
+                    </a>
+                </li>
+                <?php if ($_SESSION['rol'] == 1) { ?>
+                    <li>
+                        <a href="<?php echo BASE_URL . 'inventarios'; ?>">
+                            <div class="parent-icon"><i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div class="menu-title">Movimiento</div>
+                        </a>
+                    </li>
                 <?php } ?>
             </ul>
             <!--end navigation-->
@@ -192,7 +187,7 @@
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php if ($_SESSION['perfil_usuario'] == null) {
                                 $perfil = BASE_URL . 'assets/images/logo.png';
-                            }else{
+                            } else {
                                 $perfil = BASE_URL . $_SESSION['perfil_usuario'];
                             } ?>
                             <img src="<?php echo $perfil; ?>" class="user-img" alt="user avatar">
@@ -202,12 +197,12 @@
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="<?php echo BASE_URL . 'usuarios/profile'; ?>"><i class="bx bx-user"></i><span>Profile</span></a>
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL . 'usuarios/profile'; ?>"><i class="bx bx-user"></i><span>Perfil</span></a>
                             </li>
                             <li>
                                 <div class="dropdown-divider mb-0"></div>
                             </li>
-                            <li><a class="dropdown-item" href="<?php echo BASE_URL . 'usuarios/salir'; ?>"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL . 'usuarios/salir'; ?>"><i class='bx bx-log-out-circle'></i><span>Salir</span></a>
                             </li>
                         </ul>
                     </div>
