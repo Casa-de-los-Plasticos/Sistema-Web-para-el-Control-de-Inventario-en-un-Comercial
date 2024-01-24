@@ -83,9 +83,9 @@ class Tpi extends Controller
 
     public function inactivos()
     {
-        $data['title'] = 'Categorias Inactivos';
-        $data['script'] = 'categorias-inactivos.js';
-        $this->views->getView('categorias', 'inactivos', $data);
+        $data['title'] = 'TPI Inactivos';
+        $data['script'] = 'tpi-inactivos.js';
+        $this->views->getView('tpi', 'inactivos', $data);
     }
 
     public function listarInactivos()
@@ -93,7 +93,7 @@ class Tpi extends Controller
         $data = $this->model->getTpi(0);
         for ($i = 0; $i < count($data); $i++) {
             $data[$i]['acciones'] = '<div>
-            <button class="btn btn-success" type="button" onclick="restaurarCategoria(' . $data[$i]['id'] . ')"><i class="fas fa-check-circle"></i></button>
+            <button class="btn btn-success" type="button" onclick="restaurarTpi(' . $data[$i]['id'] . ')"><i class="fas fa-check-circle"></i></button>
             </div>';
         }
         echo json_encode($data, JSON_UNESCAPED_UNICODE);

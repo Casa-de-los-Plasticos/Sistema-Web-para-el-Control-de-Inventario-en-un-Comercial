@@ -5,7 +5,8 @@ class TpiModel extends Query{
     }
     public function getTpi()
     {
-        $sql = "SELECT * FROM tpi";
+        // $sql = "SELECT * FROM tpi";
+        $sql = "SELECT * FROM tpi WHERE estado = $estado";
         return $this->selectAll($sql);
     }
     public function registrar($codigo, $descripcion, $tpi, $cantidad)
@@ -30,9 +31,9 @@ class TpiModel extends Query{
         $array = array($estado, $idTpi);
         return $this->save($sql, $array);
     }
-    public function editar($idCategoria)
+    public function editar($idTpi)
     {
-        $sql = "SELECT * FROM categorias WHERE id = $idCategoria";
+        $sql = "SELECT * FROM tpi WHERE id = $idTpi";
         return $this->select($sql);
     }
 
