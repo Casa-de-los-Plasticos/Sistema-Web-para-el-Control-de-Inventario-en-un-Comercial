@@ -20,8 +20,7 @@ class Tpi extends Controller
     {
         $data = $this->model->getTpi(1);
         for ($i = 0; $i < count($data); $i++) {
-            $data[$i]['acciones'] = '<div>
-                <button class="btn btn-info" type="button" onclick="editarTpi(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button>
+            $data[$i]['acciones'] = '<div> 
                 <button class="btn btn-danger" type="button" onclick="eliminarTpi(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></button>
             </div>';
         }
