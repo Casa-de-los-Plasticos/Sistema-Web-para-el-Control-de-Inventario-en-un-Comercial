@@ -90,7 +90,7 @@ class Tpi extends Controller
 
     public function listarInactivos()
     {
-        $data = $this->model->getCategorias(0);
+        $data = $this->model->getTpi(0);
         for ($i = 0; $i < count($data); $i++) {
             $data[$i]['acciones'] = '<div>
             <button class="btn btn-success" type="button" onclick="restaurarCategoria(' . $data[$i]['id'] . ')"><i class="fas fa-check-circle"></i></button>
