@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 })
 
-function eliminarCategoria(idCategoria) {
-    const url = base_url + 'categorias/eliminar/' + idCategoria;
+function eliminarTpi(idTpi) {
+    const url = base_url + 'tpi/eliminar/' + idTpi;
     eliminarRegistros(url, tblTpi);
 }
 

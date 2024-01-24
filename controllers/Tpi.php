@@ -58,12 +58,12 @@ class Tpi extends Controller
         die();
     }
 
-    public function eliminar($idCategoria)
+    public function eliminar($idTpi)
     {
-        if (isset($_GET) && is_numeric($idCategoria)) {
-            $data = $this->model->eliminar(0, $idCategoria);
+        if (isset($_GET) && is_numeric($idTpi)) {
+            $data = $this->model->eliminar(0, $idTpi);
             if ($data == 1) {
-                $res = array('msg' => 'CATEGORIA DADO DE BAJA', 'type' => 'success');
+                $res = array('msg' => 'TPI DADO DE BAJA', 'type' => 'success');
             } else {
                 $res = array('msg' => 'ERROR AL ELIMINAR', 'type' => 'error');
             }

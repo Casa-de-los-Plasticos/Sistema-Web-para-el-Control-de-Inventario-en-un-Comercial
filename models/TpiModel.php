@@ -24,10 +24,10 @@ class TpiModel extends Query{
         return $this->select($sql);
     }
 
-    public function eliminar($estado, $idCategoria)
+    public function eliminar($estado, $idTpi)
     {
-        $sql = "UPDATE categorias SET estado = ? WHERE id = ?";
-        $array = array($estado, $idCategoria);
+        $sql = "UPDATE tpi SET estado = ? WHERE id = ?";
+        $array = array($estado, $idTpi);
         return $this->save($sql, $array);
     }
     public function editar($idCategoria)

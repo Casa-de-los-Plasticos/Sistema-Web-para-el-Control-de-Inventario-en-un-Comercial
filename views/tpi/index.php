@@ -8,7 +8,7 @@
                 <a class="dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown"><i class='bx bx-dots-horizontal-rounded font-22 text-option'></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="<?php echo BASE_URL . 'categorias/inactivos'; ?>"><i class="fas fa-trash text-danger"></i> Inactivos</a>
+                    <li><a class="dropdown-item" href="<?php echo BASE_URL . 'tpi/inactivos'; ?>"><i class="fas fa-trash text-danger"></i> Inactivos</a>
                     </li>
                 </ul>
             </div>
