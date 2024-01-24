@@ -104,25 +104,4 @@ document.addEventListener('DOMContentLoaded', function(){
 function eliminarTpi(idTpi) {
     const url = base_url + 'tpi/eliminar/' + idTpi;
     eliminarRegistros(url, tblTpi);
-}
-
-function editarCategoria(idCategoria) {
-    errorNombre.textContent = '';
-    const url = base_url + 'categorias/editar/' + idCategoria;
-    //hacer una instancia del objeto XMLHttpRequest 
-    const http = new XMLHttpRequest();
-    //Abrir una Conexion - POST - GET
-    http.open('GET', url, true);
-    //Enviar Datos
-    http.send();
-    //verificar estados
-    http.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            const res = JSON.parse(this.responseText);
-            id.value = res.id;
-            nombre.value = res.categoria;
-            btnAccion.textContent = 'Actualizar';
-            firstTab.show()
-        }
-    }
 } 
