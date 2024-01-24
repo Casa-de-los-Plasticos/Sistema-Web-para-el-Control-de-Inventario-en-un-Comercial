@@ -103,27 +103,27 @@
                 </li>
 
                 <?php if ($_SESSION['rol'] == 1) { ?>
-                    <li>
-                        <a href="<?php echo BASE_URL . 'proveedor'; ?>">
-                            <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
-                            </div>
-                            <div class="menu-title">Proveedores</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo BASE_URL . 'ventas'; ?>">
-                            <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
-                            </div>
-                            <div class="menu-title">Pedido</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo BASE_URL . 'compras'; ?>">
-                            <div class="parent-icon"><i class="fa-solid fa-truck-fast"></i>
-                            </div>
-                            <div class="menu-title">Ingreso</div>
-                        </a>
-                    </li>
+                    <!-- <li>
+                    <a href="<?php echo BASE_URL . 'proveedor'; ?>">
+                        <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
+                        </div>
+                        <div class="menu-title">Proveedores</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo BASE_URL . 'ventas'; ?>">
+                        <div class="parent-icon"><i class="fa-solid fa-cash-register"></i>
+                        </div>
+                        <div class="menu-title">Pedido</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo BASE_URL . 'compras'; ?>">
+                        <div class="parent-icon"><i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <div class="menu-title">Ingreso</div>
+                    </a>
+                </li> -->
                     <!-- <li>
                     <a href="<?php echo BASE_URL . 'indicadores'; ?>">
                         <div class="parent-icon"><i class="fa-solid fa-signal"></i></div>
@@ -144,6 +144,13 @@
                         </ul>
                     </li>
                 <?php } ?>
+                <!-- </li> -->
+                <li>
+                    <a href="<?php echo BASE_URL . 'proveedor'; ?>">
+                        <div class="parent-icon"><i class="fa-solid fa-cart-flatbed-suitcase"></i>
+                        </div>
+                        <div class="menu-title">Proveedores</div>
+                    </a>
                 </li>
                 <li>
                     <a href="<?php echo BASE_URL . 'ventas'; ?>">
@@ -159,6 +166,9 @@
                         <div class="menu-title">Ingreso</div>
                     </a>
                 </li>
+
+
+
                 <?php if ($_SESSION['rol'] == 1) { ?>
                     <li>
                         <a href="<?php echo BASE_URL . 'inventarios'; ?>">
