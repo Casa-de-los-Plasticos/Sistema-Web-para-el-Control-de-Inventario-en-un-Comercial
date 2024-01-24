@@ -43,9 +43,15 @@ class TpiModel extends Query{
         return $this->save($sql, $array);
     }
 
+    // public function buscarPorCodigo($valor)
+    // {
+    //     $sql = "SELECT id, codigo, descripcion, cantidad FROM stock_fisico WHERE codigo LIKE '%".$valor."%' AND estado = 1 LIMIT 10";
+    //     return $this->selectAll($sql);
+    // }
+    
     public function buscarPorCodigo($valor)
     {
-        $sql = "SELECT id, codigo, descripcion, cantidad FROM stock_fisico WHERE codigo LIKE '%".$valor."%' AND estado = 1 LIMIT 10";
+        $sql = "SELECT id, codigo, descripcion, cantidad FROM productos WHERE codigo LIKE '%".$valor."%' AND estado = 1 LIMIT 10";
         return $this->selectAll($sql);
     }
 }
