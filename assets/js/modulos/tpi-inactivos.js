@@ -1,7 +1,7 @@
-let tblCategorias;
+let tblTpi;
 document.addEventListener('DOMContentLoaded', function(){
     //cargar datos con el plugin datatables
-    tblCategorias = $('#tblCategorias').DataTable({
+    tblTpi = $('#tblTpi').DataTable({
         ajax: {
             url: base_url + 'tpi/listarInactivos',
             dataSrc: ''
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 })
 
-function restaurarCategoria(idCategoria) {
-    const url = base_url + 'tpi/restaurar/' + idCategoria;
-    restaurarRegistros(url, tblCategorias);
+function restaurarTpi(idTpi) {
+    const url = base_url + 'tpi/restaurar/' + idTpi;
+    restaurarRegistros(url, tblTpi);
 }

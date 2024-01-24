@@ -3,7 +3,7 @@ class TpiModel extends Query{
     public function __construct() {
         parent::__construct();
     }
-    public function getTpi()
+    public function getTpi($estado)
     {
         // $sql = "SELECT * FROM tpi";
         $sql = "SELECT * FROM tpi WHERE estado = $estado";
@@ -39,7 +39,7 @@ class TpiModel extends Query{
 
     public function actualizar($categoria, $id)
     {
-        $sql = "UPDATE categorias SET categoria = ? WHERE id = ?";
+        $sql = "UPDATE tpi SET estado = ? WHERE id = ?";
         $array = array($categoria, $id);
         return $this->save($sql, $array);
     }

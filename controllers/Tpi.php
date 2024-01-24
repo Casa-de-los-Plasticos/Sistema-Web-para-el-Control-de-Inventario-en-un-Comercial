@@ -74,9 +74,9 @@ class Tpi extends Controller
         die();
     }
 
-    public function editar($idCategoria)
+    public function editar($idTpi)
     {
-        $data = $this->model->editar($idCategoria);
+        $data = $this->model->editar($idTpi);
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
         die();
     }
@@ -100,12 +100,12 @@ class Tpi extends Controller
         die();
     }
 
-    public function restaurar($idCategoria)
+    public function restaurar($idTpi)
     {
-        if (isset($_GET) && is_numeric($idCategoria)) {
-            $data = $this->model->eliminar(1, $idCategoria);
+        if (isset($_GET) && is_numeric($idTpi)) {
+            $data = $this->model->eliminar(1, $idTpi);
             if ($data == 1) {
-                $res = array('msg' => 'CATEGORIA RESTAURADO', 'type' => 'success');
+                $res = array('msg' => 'TPI RESTAURADO', 'type' => 'success');
             } else {
                 $res = array('msg' => 'ERROR AL RESTURAR', 'type' => 'error');
             }
