@@ -26,7 +26,7 @@
             <div class="tab-pane fade show active mt-3" id="nav-irs" role="tabpanel" aria-labelledby="nav-irs-tab" tabindex="0">
                 <h5 class="card-title text-center"><i class="fas fa-tags"></i> Índice de Rotación de Stock</h5>
                 <hr>
-                <!-- <form id="formulario" autocomplete="off">
+                <form id="formulario" autocomplete="off">
                     <input type="hidden" id="id" name="id">
                     <div class="row mb-3">
                         <div class="col-md-2">
@@ -86,7 +86,7 @@
                         <tbody>
                         </tbody>
                     </table>
-                </div> -->
+                </div>
             </div>
             <div class="tab-pane fade p-3" id="nav-graficos" role="tabpanel" aria-labelledby="nav-graficos-tab" tabindex="0">
                 <div class="row">
