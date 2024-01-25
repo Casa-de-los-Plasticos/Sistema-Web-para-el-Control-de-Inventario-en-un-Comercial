@@ -81,15 +81,15 @@ class Admin extends Controller
             
             $id = strClean($_POST['id']);
             if (empty($ruc)) {
-                $res = array('msg' => 'EL RUC ES REQUERIDO', 'type' => 'warning');
+                $res = array('msg' => 'EL RUC ES REQUERIDO...', 'type' => 'warning');
             } else if (empty($nombre)) {
-                $res = array('msg' => 'EL NOMBRE ES REQUERIDO', 'type' => 'warning');
+                $res = array('msg' => 'EL NOMBRE ES REQUERIDO...', 'type' => 'warning');
             } else if (empty($telefono)) {
-                $res = array('msg' => 'EL TELEFONO ES REQUERIDO', 'type' => 'warning');
+                $res = array('msg' => 'EL TELEFONO ES REQUERIDO...', 'type' => 'warning');
             } else if (empty($correo)) {
-                $res = array('msg' => 'EL CORREO ES REQUERIDO', 'type' => 'warning');
+                $res = array('msg' => 'EL CORREO ES REQUERIDO...', 'type' => 'warning');
             } else if (empty($direccion)) {
-                $res = array('msg' => 'LA DIRECCION ES REQUERIDO', 'type' => 'warning');
+                $res = array('msg' => 'LA DIRECCION ES REQUERIDO...', 'type' => 'warning');
             } else {
                 $data = $this->model->actualizar(
                     $ruc,
@@ -106,13 +106,13 @@ class Admin extends Controller
                         $directorio = 'assets/images/logo.png';
                         move_uploaded_file($logo['tmp_name'], $directorio);
                     }
-                    $res = array('msg' => 'DATOS MODIFICADO', 'type' => 'success');
+                    $res = array('msg' => 'DATOS MODIFICADO...', 'type' => 'success');
                 } else {
-                    $res = array('msg' => 'ERROR AL ACTUALIZAR', 'type' => 'error');
+                    $res = array('msg' => 'ERROR AL ACTUALIZAR...', 'type' => 'error');
                 }
             }
         } else {
-            $res = array('msg' => 'ERROR DESCONOCIDO', 'type' => 'error');
+            $res = array('msg' => 'ERROR DESCONOCIDO...', 'type' => 'error');
         }
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
         die();
