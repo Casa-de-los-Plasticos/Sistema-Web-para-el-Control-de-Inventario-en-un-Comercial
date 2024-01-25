@@ -14,7 +14,7 @@ class Irs extends Controller
     {
         $data['title'] = 'IRS';
         $data['script'] = 'irs.js';
-        // $data['script'] = 'irsconso.js';
+        $data['irs'] = 'irsconso.js';
         $this->views->getView('irs', 'index', $data);
     }
     public function listar()
@@ -23,45 +23,47 @@ class Irs extends Controller
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
         die();
     }
-    // public function listarLunes()
-    // {
-    //     $data = $this->model->getLunes();
-    //     echo json_encode($data, JSON_UNESCAPED_UNICODE);
-    //     die();
-    // }
 
-    // public function listarViernes()
-    // {
-    //     $data = $this->model->getViernes();
-    //     echo json_encode($data, JSON_UNESCAPED_UNICODE);
-    //     die();
-    // }
+    public function listarLunes()
+    {
+        $data = $this->model->getLunes();
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    public function listarViernes()
+    {
+        $data = $this->model->getViernes();
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+    
     public function registrar()
     {
-        if (isset($_POST['descripcionProducto'])) {
-            $descripcionProducto = strClean($_POST['descripcionProducto']);
-            $fecha_inicial = strClean($_POST['fecha_inicial']);
-            $fecha_final = strClean($_POST['fecha_final']);
-            $irsNuevo = strClean($_POST['irsNuevo']);
-            $id = strClean($_POST['id']);
-            if (empty($descripcionProducto)) {
+        if (isset($_POST['nombre'])) {
+            $nombre = strClean($_POST['nombre']);
+            $fecha_inicio = strClean($_POST['fecha_inicial']);
+            $fecha_fin = strClean($_POST['fecha_final']);
+            $resultado = strClean($_POST['irsNuevo']);
+            // $id = strClean($_POST['id']);
+            if (empty($nombre)) {
                 $res = array('msg' => 'LA DESCRIPCIÓN DEL PRODUCTO ES OBLIGATORIO...', 'type' => 'warning');
             } else {
-                if ($id == '') {
-                    $data = $this->model->registrar($descripcionProducto, $fecha_inicial, $fecha_final, $irsNuevo);
+                // if ($id == '') {
+                    $data = $this->model->registrar($nombre, $fecha_inicio, $fecha_fin, $resultado);
                     if ($data > 0) {
                         $res = array('msg' => 'IRS REGISTRADO...', 'type' => 'success');
                     } else {
                         $res = array('msg' => 'ERROR AL REGISTRAR...', 'type' => 'error');
                     }
-                } else {
-                    $data = $this->model->actualizar($descripcionProducto, $fecha_inicial, $fecha_final, $irsNuevo, $id);
-                    if ($data > 0) {
-                        $res = array('msg' => 'IRS MODIFICADO...', 'type' => 'success');
-                    } else {
-                        $res = array('msg' => 'ERROR AL MODIFICAR...', 'type' => 'error');
-                    }
-                }
+                // } else {
+                    // $data = $this->model->actualizar($nombre, $fecha_inicio, $fecha_fin, $resultado, $id);
+                    // if ($data > 0) {
+                    //     $res = array('msg' => 'IRS MODIFICADO...', 'type' => 'success');
+                    // } else {
+                    //     $res = array('msg' => 'ERROR AL MODIFICAR...', 'type' => 'error');
+                    // }
+                // }
             }
         }
         echo json_encode($res);
@@ -85,7 +87,7 @@ class Irs extends Controller
     function consultar()
     {
         if (isset($_POST['submit'])) {
-            $descripcion = $_POST['descripcionProducto'];
+            $descripcion = $_POST['nombre'];
             $fechaInicial = $_POST['fecha_inicial'];
             $fechaFinal = $_POST['fecha_final'];
             // $data = $this->model->calcularSalida($valor);
@@ -93,6 +95,29 @@ class Irs extends Controller
             echo json_encode($data[0], JSON_UNESCAPED_UNICODE);
             die();
         }
+    }
+
+    public function topProductos()
+    {
+        $pagina = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
+        $elementosPorPagina = 15;
+        $offset = ($pagina - 1) * $elementosPorPagina;
+
+        $data = $this->model->topProductos($elementosPorPagina, $offset);
+        echo json_encode($data);
+        die();
+    }
+
+    public function topProductosPost()
+    {
+        $pagina = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
+        $elementosPorPagina = 15;
+
+        $offset = ($pagina - 1) * $elementosPorPagina;
+
+        $data = $this->model->topProductosPost($elementosPorPagina, $offset);
+        echo json_encode($data);
+        die();
     }
 
     // ESTE APARTADO SE ESTÁ DESARROLLANDO HOY 02/11/2023
@@ -120,12 +145,27 @@ class Irs extends Controller
         $data = $this->model->buscarPorNombre($valor);
         foreach ($data as $row) {
             $result['id'] = $row['id'];
-            $result['label'] = $row['codigo'];
-            $result['descripcion'] = $row['descripcion'];
+            $result['label'] = $row['descripcion'];
+            // $result['descripcion'] = $row['descripcion'];
             // $result['direccion'] = $row['direccion'];
             array_push($array, $result);
         }
         echo json_encode($array, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    public function filtrar()
+    {
+        // Obtener los datos del filtro
+        $descripcion = $_POST['descripcion'];
+        $fechaInicio = $_POST['fechaInicio'];
+        $fechaFin = $_POST['fechaFin'];
+
+        // Filtrar en el modelo
+        $data = $this->model->filtrar($descripcion, $fechaInicio, $fechaFin);
+
+        // Enviar los resultados como JSON
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
         die();
     }
 }

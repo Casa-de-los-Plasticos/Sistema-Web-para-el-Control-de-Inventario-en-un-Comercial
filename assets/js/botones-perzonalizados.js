@@ -52,10 +52,11 @@ const dom = "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>" +
                 title: 'CASA DE LOS PLÁSTICOS',
                 filename: 'NUEVO REPORTE...',
                 text: '<span class="badge bg-success"><i class="fas fa-file-csv"></i></span>'
-            },
-            {
-                extend: 'colvis',
-                text: '<span class="badge bg-info"><i class="fas fa-columns"></i></span>',
-                postfixButtons: ['colvisRestore']
             }
+            // ,
+            // {
+            //     extend: 'colvis',
+            //     text: '<span class="badge bg-info"><i class="fas fa-columns"></i></span>',
+            //     postfixButtons: ['colvisRestore']
+            // }
         ]
