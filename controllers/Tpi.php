@@ -14,6 +14,7 @@ class Tpi extends Controller
     {
         $data['title'] = 'TPI';
         $data['script'] = 'tpi.js';
+        $data['consolidado'] = 'consolidado.js';
         $this->views->getView('tpi', 'index', $data);
     }
     public function listar()

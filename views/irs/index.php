@@ -26,7 +26,7 @@
             <div class="tab-pane fade show active mt-3" id="nav-irs" role="tabpanel" aria-labelledby="nav-irs-tab" tabindex="0">
                 <h5 class="card-title text-center"><i class="fas fa-tags"></i> Índice de Rotación de Stock</h5>
                 <hr>
-                <form id="formulario" autocomplete="off">
+                <!-- <form id="formulario" autocomplete="off">
                     <input type="hidden" id="id" name="id">
                     <div class="row mb-3">
                         <div class="col-md-2">
@@ -86,7 +86,7 @@
                         <tbody>
                         </tbody>
                     </table>
-                </div>
+                </div> -->
             </div>
             <div class="tab-pane fade p-3" id="nav-graficos" role="tabpanel" aria-labelledby="nav-graficos-tab" tabindex="0">
                 <div class="row">
@@ -114,7 +114,7 @@
                                                 die("Conexión fallida: " . $conn->connect_error);
                                             }
 
-                                            $sql = "SELECT descripcion, resultado FROM irs WHERE fecha = '2023-07-08'"; // Reemplaza "tu_tabla" por el nombre real de tu tabla
+                                            $sql = "SELECT descripcion, resultado FROM irs WHERE fecha = '2023-07-08'"; 
                                             $result = $conn->query($sql);
 
                                             $data = array();
@@ -151,18 +151,15 @@
 
                                         function showChart() {
                                             var selectedGroup = document.getElementById("groupSelect").value;
-
-                                            // Oculta todas las gráficas
+ 
                                             var charts = document.querySelectorAll("canvas");
                                             charts.forEach(function(chart) {
                                                 chart.style.display = "none";
                                             });
-
-                                            // Muestra la gráfica del grupo seleccionado
+ 
                                             var selectedChart = document.getElementById("chart" + selectedGroup);
                                             selectedChart.style.display = "block";
-
-                                            // Crea o actualiza la gráfica del grupo seleccionado
+ 
                                             createChart(selectedGroup);
                                         }
 
@@ -185,8 +182,8 @@
                                             gradientStroke4.addColorStop(1, "#3bb2b8");
 
                                             var gradientVino = ctx.createLinearGradient(0, 0, 0, 300);
-                                            gradientVino.addColorStop(0, "#42e695"); // Un tono de naranja claro
-                                            gradientVino.addColorStop(1, "#3bb2b8"); // Un tono de salmón claro
+                                            gradientVino.addColorStop(0, "#42e695");  
+                                            gradientVino.addColorStop(1, "#3bb2b8");  
 
                                             var gradientStroke = ctx.createLinearGradient(0, 0, 0, 300);
                                             gradientStroke.addColorStop(0, "#2196F3");
@@ -194,7 +191,7 @@
 
 
                                             new Chart(ctx, {
-                                                type: "horizontalBar", // Tipo de gráfico "bar" para barras verticales
+                                                type: "horizontalBar",  
                                                 data: {
                                                     labels: data[group].map(function(item) {
                                                         return item[0];
@@ -224,7 +221,7 @@
                                                 }
                                             });
                                         }
-                                        // Muestra la gráfica del grupo seleccionado al cargar la página
+                                         
                                         showChart();
                                     </script>
                                 </div>
@@ -291,18 +288,15 @@
 
                                         function showChartPostTest() {
                                             var selectedGroup = document.getElementById("groupSelectPostTest").value;
-
-                                            // Oculta todas las gráficas
+ 
                                             var charts = document.querySelectorAll("canvas[id^='chartPostTest']");
                                             charts.forEach(function(chart) {
                                                 chart.style.display = "none";
                                             });
-
-                                            // Muestra la gráfica del grupo seleccionado
+ 
                                             var selectedChart = document.getElementById("chartPostTest" + selectedGroup);
                                             selectedChart.style.display = "block";
-
-                                            // Crea o actualiza la gráfica del grupo seleccionado
+ 
                                             createChartPostTest(selectedGroup);
                                         }
 
@@ -325,8 +319,8 @@
                                             gradientStroke4.addColorStop(1, "#3bb2b8");
 
                                             var gradientVino = ctx.createLinearGradient(0, 0, 0, 300);
-                                            gradientVino.addColorStop(0, "#0D0D0D"); // Un tono de naranja claro
-                                            gradientVino.addColorStop(1, "#1FAA7F"); // Un tono de salmón claro
+                                            gradientVino.addColorStop(0, "#0D0D0D"); 
+                                            gradientVino.addColorStop(1, "#1FAA7F");  
                                             new Chart(ctx, {
                                                 type: "horizontalBar",
                                                 data: {
@@ -353,8 +347,7 @@
                                                     }
                                                 }
                                             });
-                                        }
-                                        // Muestra la gráfica del grupo seleccionado al cargar la página
+                                        } 
                                         showChartPostTest();
                                     </script>
                                 </div>
