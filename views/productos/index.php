@@ -32,7 +32,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover nowrap" id="tblProductos" style="width: 100%;">
                         <thead style="max-width:500px">
-                            <p class="card-title text-start"><b>Precio de Compra y Venta son Referenciales</b> </p>
+                            <!-- <p class="card-title text-start"><b>Precio de Compra y Venta son Referenciales</b> </p> -->
                             <tr>
                                 <th>Codigo</th>
                                 <th>Descripcion</th>

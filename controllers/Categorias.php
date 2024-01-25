@@ -72,12 +72,12 @@ class Categorias extends Controller
         if (isset($_GET) && is_numeric($idCategoria)) {
             $data = $this->model->eliminar(0, $idCategoria);
             if ($data == 1) {
-                $res = array('msg' => 'CATEGORIA DADO DE BAJA', 'type' => 'success');
+                $res = array('msg' => 'CATEGORIA DADO DE BAJA...', 'type' => 'success');
             } else {
-                $res = array('msg' => 'ERROR AL ELIMINAR', 'type' => 'error');
+                $res = array('msg' => 'ERROR AL ELIMINAR...', 'type' => 'error');
             }
         } else {
-            $res = array('msg' => 'ERROR DESCONOCIDO', 'type' => 'error');
+            $res = array('msg' => 'ERROR DESCONOCIDO...', 'type' => 'error');
         }
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
         die();
@@ -114,12 +114,12 @@ class Categorias extends Controller
         if (isset($_GET) && is_numeric($idCategoria)) {
             $data = $this->model->eliminar(1, $idCategoria);
             if ($data == 1) {
-                $res = array('msg' => 'CATEGORIA RESTAURADO', 'type' => 'success');
+                $res = array('msg' => 'CATEGORIA RESTAURADO...', 'type' => 'success');
             } else {
-                $res = array('msg' => 'ERROR AL RESTURAR', 'type' => 'error');
+                $res = array('msg' => 'ERROR AL RESTURAR...', 'type' => 'error');
             }
         } else {
-            $res = array('msg' => 'ERROR DESCONOCIDO', 'type' => 'error');
+            $res = array('msg' => 'ERROR DESCONOCIDO...', 'type' => 'error');
         }
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
         die();
