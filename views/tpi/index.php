@@ -71,7 +71,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-2 mt-3">
                             <label for="cantidad"> Cantidad Actual <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-list"></i></span>
@@ -80,7 +80,7 @@
                             <span id="errorCantidad_Actual" class="text-danger"></span>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-3 mt-3">
                             <label for="tpi">Tasa de Presición de Inventario <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-list"></i></span>
@@ -88,7 +88,7 @@
                             </div>
                         </div>
 
-                        <div class="text-end">
+                        <div class="col-md-7 mt-4 text-end">
                             <button class="btn btn-danger" type="button" id="btnNuevo">Nuevo</button>
                             <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
                         </div>
