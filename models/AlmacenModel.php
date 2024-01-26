@@ -5,7 +5,7 @@ class AlmacenModel extends Query{
     }
     public function getAlmacen($estado)
     {
-        $sql = "SELECT * FROM stock_fisico WHERE estado = $estado";
+        $sql = "SELECT * FROM stock_fisico WHERE estado = $estado ORDER BY fecha DESC, hora DESC";
         return $this->selectAll($sql);
     }
 
@@ -25,10 +25,10 @@ class AlmacenModel extends Query{
         return $this->select($sql);
     }
 
-    public function eliminar($estado, $idMedida)
+    public function eliminar($estado, $idAlmacen)
     {
-        $sql = "UPDATE medidas SET estado = ? WHERE id = ?";
-        $array = array($estado, $idMedida);
+        $sql = "UPDATE stock_fisico SET estado = ? WHERE id = ?";
+        $array = array($estado, $idAlmacen);
         return $this->save($sql, $array);
     }
 

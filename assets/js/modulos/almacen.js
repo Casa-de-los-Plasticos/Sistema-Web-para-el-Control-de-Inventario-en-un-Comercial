@@ -87,3 +87,8 @@ document.addEventListener('DOMContentLoaded', function(){
         }        
     });
 })
+
+function eliminarAlmacen(idAlmacen) {
+    const url = base_url + 'almacen/eliminar/' + idAlmacen;
+    eliminarRegistros(url, tblAlmacen);
+}

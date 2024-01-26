@@ -35,8 +35,8 @@
         <thead>
             <tr>
                 <th>Descripción</th>
-                <th>Precio Compra</th>
-                <th>Precio Venta</th>
+                <!-- <th>Precio Compra</th> -->
+                <!-- <th>Precio Venta</th> -->
                 <th>Stock Actual</th>
                 <th>Ventas</th>
             </tr>
@@ -47,8 +47,8 @@
             foreach ($data['productos'] as $producto) { ?>
                 <tr>
                     <td><?php echo $producto['descripcion']; ?></td>
-                    <td><?php echo number_format($producto['precio_compra'], 2); ?></td>
-                    <td><?php echo number_format($producto['precio_venta']); ?></td>
+                    <!-- <td><?php echo number_format($producto['precio_compra'], 2); ?></td> -->
+                    <!-- <td><?php echo number_format($producto['precio_venta']); ?></td> -->
                     <td><?php echo number_format($producto['cantidad']); ?></td>
                     <td><?php echo $producto['ventas']; ?></td>                    
                 </tr>

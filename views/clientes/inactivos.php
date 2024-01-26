@@ -2,7 +2,7 @@
 
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title text-center">Clientes Inactivos</h5>
+        <h5 class="card-title text-center">Transportistas Inactivos</h5>
         <hr>
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover align-middle nowrap" id="tblClientes" style="width: 100%;">

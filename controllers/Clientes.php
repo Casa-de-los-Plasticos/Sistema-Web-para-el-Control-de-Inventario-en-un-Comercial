@@ -64,7 +64,7 @@ class Clientes extends Controller
                             }
                             $data = $this->model->registrar($identidad, $num_identidad, $nombre, $telefono, $correo, $direccion);
                             if ($data > 0) {
-                                $res = array('msg' => 'CLIENTE REGISTRADO...', 'type' => 'success');
+                                $res = array('msg' => 'TRANSPORTISTA REGISTRADO...', 'type' => 'success');
                             } else {
                                 $res = array('msg' => 'ERROR AL REGISTRAR...', 'type' => 'error');
                             }
@@ -89,7 +89,7 @@ class Clientes extends Controller
                             }
                             $data = $this->model->actualizar($identidad, $num_identidad, $nombre, $telefono, $correo, $direccion, $id);
                             if ($data > 0) {
-                                $res = array('msg' => 'CLIENTE MODIFICADO...', 'type' => 'success');
+                                $res = array('msg' => 'TRANSPORTISTA MODIFICADO...', 'type' => 'success');
                             } else {
                                 $res = array('msg' => 'ERROR AL MODIFICAR...', 'type' => 'error');
                             }
@@ -112,7 +112,7 @@ class Clientes extends Controller
         if (isset($_GET) && is_numeric($idCliente)) {
             $data = $this->model->eliminar(0, $idCliente);
             if ($data > 0) {
-                $res = array('msg' => 'CLIENTE DADO DE BAJA...', 'type' => 'success');
+                $res = array('msg' => 'TRANSPORTISTA DADO DE BAJA...', 'type' => 'success');
             } else {
                 $res = array('msg' => 'ERROR AL ELIMINAR...', 'type' => 'error');
             }
@@ -151,7 +151,7 @@ class Clientes extends Controller
         if (isset($_GET) && is_numeric($idCliente)) {
             $data = $this->model->eliminar(1, $idCliente);
             if ($data > 0) {
-                $res = array('msg' => 'CLIENTE RESTAURADO', 'type' => 'success');
+                $res = array('msg' => 'TRANSPORTISTA RESTAURADO', 'type' => 'success');
             } else {
                 $res = array('msg' => 'ERROR AL RESTUARAR', 'type' => 'error');
             }

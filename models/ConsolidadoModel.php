@@ -10,7 +10,7 @@ class ConsolidadoModel extends Query
         // $fechaInicio = $_POST["fecha_inicio"];
         // $fechaFin = $_POST["fecha_fin"];
         // $sql = "SELECT * FROM consolidado_tpi WHERE fecha BETWEEN '$fechaInicio' AND '$fechaFin'";
-        $sql = "SELECT * FROM consolidado_tpi";
+        $sql = "SELECT * FROM consolidado_tpi ORDER BY fecha DESC, hora DESC";
         return $this->selectAll($sql);
     }
 

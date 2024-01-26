@@ -6,7 +6,7 @@ class TpiModel extends Query{
     public function getTpi($estado)
     {
         // $sql = "SELECT * FROM tpi";
-        $sql = "SELECT * FROM tpi WHERE estado = $estado";
+        $sql = "SELECT * FROM tpi WHERE estado = $estado ORDER BY fecha DESC, hora DESC";
         return $this->selectAll($sql);
     }
     public function registrar($codigo, $descripcion, $tpi, $cantidad)

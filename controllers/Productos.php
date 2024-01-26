@@ -251,30 +251,30 @@ class Productos extends Controller
         $hojaActiva->getColumnDimension('A')->setWidth(50);
         $hojaActiva->getColumnDimension('B')->setWidth(10);
         $hojaActiva->getColumnDimension('C')->setWidth(20);
-        $hojaActiva->getColumnDimension('D')->setWidth(20);
-        $hojaActiva->getColumnDimension('E')->setWidth(30);
+        // $hojaActiva->getColumnDimension('D')->setWidth(20);
+        // $hojaActiva->getColumnDimension('E')->setWidth(30);
 
-        $spreadsheet->getActiveSheet()->getStyle('A1:E1')->getFill()
+        $spreadsheet->getActiveSheet()->getStyle('A1:C1')->getFill()
             ->setFillType(Fill::FILL_SOLID)
             ->getStartColor()->setARGB('008cff');
 
         $spreadsheet->getActiveSheet()->getStyle('A1:E1')
             ->getFont()->getColor()->setARGB(Color::COLOR_WHITE);
 
-        $hojaActiva->setCellValue('A1', 'Producto');
-        $hojaActiva->setCellValue('B1', 'Cantidad');
-        $hojaActiva->setCellValue('C1', 'Precio Compra');
-        $hojaActiva->setCellValue('D1', 'Precio Venta');
-        $hojaActiva->setCellValue('E1', 'Categoria');
+        $hojaActiva->setCellValue('A1', 'PRODUCTO');
+        $hojaActiva->setCellValue('B1', 'CANTIDAD');
+        // $hojaActiva->setCellValue('C1', 'Precio Compra');
+        // $hojaActiva->setCellValue('D1', 'Precio Venta');
+        $hojaActiva->setCellValue('C1', 'CATEGORIA');
 
         $fila = 2;
         $productos = $this->model->getProductos(1);
         foreach ($productos as $producto) {
             $hojaActiva->setCellValue('A' . $fila, $producto['descripcion']);
             $hojaActiva->setCellValue('B' . $fila, $producto['cantidad']);
-            $hojaActiva->setCellValue('C' . $fila, $producto['precio_compra']);
-            $hojaActiva->setCellValue('D' . $fila, $producto['precio_venta']);
-            $hojaActiva->setCellValue('E' . $fila, $producto['categoria']);
+            // $hojaActiva->setCellValue('C' . $fila, $producto['precio_compra']);
+            // $hojaActiva->setCellValue('D' . $fila, $producto['precio_venta']);
+            $hojaActiva->setCellValue('C' . $fila, $producto['categoria']);
             $fila++;
         }
 

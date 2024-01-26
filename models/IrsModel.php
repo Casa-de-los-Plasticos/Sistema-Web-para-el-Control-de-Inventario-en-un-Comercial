@@ -5,7 +5,7 @@ class IrsModel extends Query{
     }
     public function getIrs()
     {
-        $sql = "SELECT * FROM irs";
+        $sql = "SELECT * FROM irs ORDER BY fecha DESC, hora DESC";
         return $this->selectAll($sql);
     }
     
