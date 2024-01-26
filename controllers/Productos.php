@@ -43,8 +43,8 @@ class Productos extends Controller
             $id = strClean($_POST['id']);
             $codigo = strClean($_POST['codigo']);
             $nombre = strClean($_POST['nombre']);
-            $precio_compra = strClean($_POST['precio_compra']);
-            $precio_venta = strClean($_POST['precio_venta']);
+            // $precio_compra = strClean($_POST['precio_compra']);
+            // $precio_venta = strClean($_POST['precio_venta']);
             $cantidad = strClean($_POST['cantidad']);
             $id_medida = strClean($_POST['id_medida']);
             $id_categoria = strClean($_POST['id_categoria']);
@@ -84,7 +84,7 @@ class Productos extends Controller
                     $verificar = $this->model->getValidar('codigo', $codigo, 'registrar', 0);
                     if (empty($verificar)) {
 
-                        $data = $this->model->registrar($codigo, $nombre, $precio_compra, $precio_venta, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $destino);
+                        $data = $this->model->registrar($codigo, $nombre, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $destino);
                         if ($data > 0) {
                             if (!empty($name)) {
                                 move_uploaded_file($tmp, $destino);
@@ -100,7 +100,7 @@ class Productos extends Controller
                     $verificar = $this->model->getValidar('codigo', $codigo, 'actualizar', $id);
                     if (empty($verificar)) {
 
-                        $data = $this->model->actualizar($codigo, $nombre, $precio_compra, $precio_venta, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $destino, $id);
+                        $data = $this->model->actualizar($codigo, $nombre, $cantidad, $id_medida, $id_categoria, $id_proveedor, $ubicacion, $destino, $id);
                         if ($data > 0) {
                             if (!empty($name)) {
                                 move_uploaded_file($tmp, $destino);
@@ -198,8 +198,8 @@ class Productos extends Controller
             $result['id'] = $row['id'];
             $result['label'] = $row['descripcion'];
             $result['stock'] = $row['cantidad'];
-            $result['precio_venta'] = $row['precio_venta'];
-            $result['precio_compra'] = $row['precio_compra'];
+            // $result['precio_venta'] = $row['precio_venta'];
+            // $result['precio_compra'] = $row['precio_compra'];
             array_push($array, $result);
         }
         echo json_encode($array, JSON_UNESCAPED_UNICODE);

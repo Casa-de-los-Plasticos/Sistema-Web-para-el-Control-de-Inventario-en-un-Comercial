@@ -84,27 +84,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (res.type == 'success') {
                         localStorage.removeItem(nombreKey);
                         setTimeout(() => {
-                            Swal.fire({
-                                title: 'Desea Generar Reporte?',
-                                showDenyButton: true,
-                                showCancelButton: true,
-                                cancelButtonColor: '#000',
-                                denyButtonColor: '#eb1623',
-                                confirmButtonColor: '#008cff',
-                                cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
-                                confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
-                                denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
-                            }).then((result) => {
-                                /* Read more about isConfirmed, isDenied below */
-                                if (result.isConfirmed) {
-                                    const ruta = base_url + 'compras/reporte/ticked/' + res.idCompra;
-                                    window.open(ruta, '_blank');
-                                } else if (result.isDenied) {
-                                    const ruta = base_url + 'compras/reporte/factura/' + res.idCompra;
-                                    window.open(ruta, '_blank');
-                                }
+                            // Swal.fire({
+                            //     title: 'Desea Generar Reporte?',
+                            //     showDenyButton: true,
+                            //     showCancelButton: true,
+                            //     cancelButtonColor: '#000',
+                            //     denyButtonColor: '#eb1623',
+                            //     confirmButtonColor: '#008cff',
+                            //     cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
+                            //     confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
+                            //     denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
+                            // }).then((result) => {
+                            //     /* Read more about isConfirmed, isDenied below */
+                            //     if (result.isConfirmed) {
+                            //         const ruta = base_url + 'compras/reporte/ticked/' + res.idCompra;
+                            //         window.open(ruta, '_blank');
+                            //     } else if (result.isDenied) {
+                            //         const ruta = base_url + 'compras/reporte/factura/' + res.idCompra;
+                            //         window.open(ruta, '_blank');
+                            //     }
                                 window.location.reload();
-                            })
+                            // })
 
                         }, 2000);
                     }

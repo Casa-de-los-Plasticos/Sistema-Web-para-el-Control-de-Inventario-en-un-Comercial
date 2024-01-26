@@ -37,8 +37,8 @@
                 <th>Descripción</th>
                 <!-- <th>Precio Compra</th> -->
                 <!-- <th>Precio Venta</th> -->
-                <th>Stock Actual</th>
-                <th>Ventas</th>
+                <th style="text-align: center;">Stock Actual</th>
+                <th style="text-align: center;">Ventas</th>
             </tr>
         </thead>
         <tbody>
@@ -49,8 +49,8 @@
                     <td><?php echo $producto['descripcion']; ?></td>
                     <!-- <td><?php echo number_format($producto['precio_compra'], 2); ?></td> -->
                     <!-- <td><?php echo number_format($producto['precio_venta']); ?></td> -->
-                    <td><?php echo number_format($producto['cantidad']); ?></td>
-                    <td><?php echo $producto['ventas']; ?></td>                    
+                    <td style="text-align: center;"><?php echo number_format($producto['cantidad']); ?></td>
+                    <td style="text-align: center;"><?php echo $producto['ventas']; ?></td>                    
                 </tr>
             <?php } ?>
         </tbody>

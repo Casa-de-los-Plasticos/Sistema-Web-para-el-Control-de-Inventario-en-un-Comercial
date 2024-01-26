@@ -6,8 +6,8 @@ const btnNuevo = document.querySelector("#btnNuevo");
 const id = document.querySelector("#id");
 const codigo = document.querySelector("#codigo");
 const nombre = document.querySelector("#nombre");
-const precio_compra = document.querySelector("#precio_compra");
-const precio_venta = document.querySelector("#precio_venta");
+// const precio_compra = document.querySelector("#precio_compra");
+// const precio_venta = document.querySelector("#precio_venta");
 const cantidad = document.querySelector("#cantidad");
 const id_medida = document.querySelector("#id_medida");
 const id_categoria = document.querySelector("#id_categoria");
@@ -19,8 +19,8 @@ const containerPreview = document.querySelector("#containerPreview");
 
 const errorCodigo = document.querySelector("#errorCodigo");
 const errorNombre = document.querySelector("#errorNombre");
-const errorCompra = document.querySelector("#errorCompra");
-const errorVenta = document.querySelector("#errorVenta");
+// const errorCompra = document.querySelector("#errorCompra");
+// const errorVenta = document.querySelector("#errorVenta");
 const errorMedida = document.querySelector("#errorMedida");
 const errorCategoria = document.querySelector("#errorCategoria");
 const errorProveedor = document.querySelector("#errorProveedor");
@@ -152,8 +152,8 @@ function editarProducto(idProducto) {
 function limpiarCampos() {
     errorCodigo.textContent = "";
     errorNombre.textContent = "";
-    errorCompra.textContent = "";
-    errorVenta.textContent = "";
+    // errorCompra.textContent = "";
+    // errorVenta.textContent = "";
     errorMedida.textContent = "";
     errorCategoria.textContent = "";
     errorProveedor.textContent = "";

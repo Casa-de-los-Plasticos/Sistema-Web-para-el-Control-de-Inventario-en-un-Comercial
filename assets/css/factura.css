@@ -71,6 +71,7 @@ table, th, td{
     font-size: 14px;
 }
 #container-producto thead th{
+    text-align: left;
     background: rgb(93, 138, 211);
     color: white;
     padding: 5px;

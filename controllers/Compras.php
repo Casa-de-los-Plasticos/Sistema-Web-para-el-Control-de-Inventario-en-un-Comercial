@@ -48,9 +48,10 @@ class Compras extends Controller
                     $result = $this->model->getProducto($producto['id']);
                     $data['id'] = $result['id'];
                     $data['nombre'] = $result['descripcion'];
-                    $data['precio'] = $result['precio_compra'];
+                    // $data['precio'] = $result['precio_compra']; 
                     $data['cantidad'] = $producto['cantidad'];
-                    $subTotal = $result['precio_compra'] * $producto['cantidad'];
+                    $subTotal = $producto['cantidad'];
+                    // $subTotal = $result['precio_compra'] * $producto['cantidad'];
                     // array_push($array['productos'], $data); esto es el original
                     $datosProductos = ($data['nombre']); // sin array
                     $cantidad = ($data['cantidad']); // sin array

@@ -74,7 +74,7 @@
                             </div>
                             <span id="errorNombre" class="text-danger"></span>
                         </div>
-                        <div class="col-md-3 mb-3">
+                        <!-- <div class="col-md-3 mb-3">
                             <label for="precio_compra">Precio Referencial Compra <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
@@ -89,12 +89,12 @@
                                 <input class="form-control" type="number" step="0.01" min="0.01" name="precio_venta" id="precio_venta" placeholder="Nombre">
                             </div>
                             <span id="errorVenta" class="text-danger"></span>
-                        </div>
+                        </div> -->
                         <div class="col-md-3 mb-3">
                             <label for="cantidad">Stock <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                                <input class="form-control" type="number"  name="cantidad" id="cantidad" placeholder="Nombre">
+                                <input class="form-control" type="number" name="cantidad" id="cantidad" placeholder="Nombre">
                             </div>
                             <span id="errorVenta" class="text-danger"></span>
                         </div>
@@ -134,6 +134,14 @@
                             </div>
                             <span id="errorProveedor" class="text-danger"></span>
                         </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="ubicacion">Ubicación <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa-solid fa-shop"></i></span>
+                                <input class="form-control" type="text" name="ubicacion" id="ubicacion" placeholder="Ubicación">
+                            </div>
+                            <span id="errorUbicacion" class="text-danger"></span>
+                        </div>
                         <div class="col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="foto">Foto (Opcional)</label>
@@ -143,19 +151,12 @@
 
                             </div>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="ubicacion">Ubicación <span class="text-danger">*</span></label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa-solid fa-shop"></i></span>
-                                <input class="form-control" type="text" name="ubicacion" id="ubicacion" placeholder="Ubicación">
-                            </div>
-                            <span id="errorUbicacion" class="text-danger"></span>
+                        <div class="col-md-6 mt-4 text-end">
+                            <button class="btn btn-danger text-end" type="button" id="btnNuevo">Nuevo</button>
+                            <button class="btn btn-primary text-end" type="submit" id="btnAccion">Registrar</button>
                         </div>
                     </div>
-                    <div class="text-end">
-                        <button class="btn btn-danger" type="button" id="btnNuevo">Nuevo</button>
-                        <button class="btn btn-primary" type="submit" id="btnAccion">Registrar</button>
-                    </div>
+
                 </form>
             </div>
         </div>
