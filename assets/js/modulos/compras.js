@@ -1,4 +1,4 @@
-const tblNuevaCompra = document.querySelector('#tblNuevaCompra tbody'); 
+const tblNuevaCompra = document.querySelector('#tblNuevaCompra tbody');
 const formulario = document.querySelector('#formulario');
 const btnActualizar = document.querySelector('#btnActualizar');
 const serie = document.querySelector('#serie');
@@ -50,69 +50,122 @@ document.addEventListener('DOMContentLoaded', function () {
     //cargar datos
     mostrarProducto();
 
-    //completar compra
+    // //completar compra
+    // btnAccion.addEventListener('click', function () {
+    //     let filas = document.querySelectorAll('#tblNuevaCompra tr').length;
+    //     if (filas < 2) {
+    //         alertaPersonalizada('warning', 'CANASTA VACÍA...');
+    //         return;
+    //     } else if (idProveedor.value == ''
+    //         && telefonoProveedor.value == '') {
+    //         alertaPersonalizada('warning', 'EL PROVEEDOR ES OBLIGATORIO...');
+    //         return;
+    //     } else if (serie.value == '') {
+    //         alertaPersonalizada('warning', 'LA SERIE ES OBLIGATORIO...');
+    //         return;
+    //     } else {
+    //         const url = base_url + 'compras/registrarCompra';
+    //         //hacer una instancia del objeto XMLHttpRequest 
+    //         const http = new XMLHttpRequest();
+    //         //Abrir una Conexion - POST - GET
+    //         http.open('POST', url, true);
+    //         //Enviar Datos
+    //         http.send(JSON.stringify({
+    //             productos: listaCarrito,
+    //             idProveedor: idProveedor.value,
+    //             serie: serie.value,
+    //         }));
+    //         //verificar estados
+    //         http.onreadystatechange = function () {
+    //             if (this.readyState == 4 && this.status == 200) {
+    //                 const res = JSON.parse(this.responseText);
+    //                 console.log(this.responseText);
+    //                 alertaPersonalizada(res.type, res.msg);
+    //                 if (res.type == 'success') {
+    //                     localStorage.removeItem(nombreKey);
+    //                     setTimeout(() => {
+    //                         // Swal.fire({
+    //                         //     title: 'Desea Generar Reporte?',
+    //                         //     showDenyButton: true,
+    //                         //     showCancelButton: true,
+    //                         //     cancelButtonColor: '#000',
+    //                         //     denyButtonColor: '#eb1623',
+    //                         //     confirmButtonColor: '#008cff',
+    //                         //     cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
+    //                         //     confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
+    //                         //     denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
+    //                         // }).then((result) => {
+    //                         //     /* Read more about isConfirmed, isDenied below */
+    //                         //     if (result.isConfirmed) {
+    //                         //         const ruta = base_url + 'compras/reporte/ticked/' + res.idCompra;
+    //                         //         window.open(ruta, '_blank');
+    //                         //     } else if (result.isDenied) {
+    //                         //         const ruta = base_url + 'compras/reporte/factura/' + res.idCompra;
+    //                         //         window.open(ruta, '_blank');
+    //                         //     }
+    //                             window.location.reload();
+    //                         // })
+
+    //                     }, 2000);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    // })
+
     btnAccion.addEventListener('click', function () {
         let filas = document.querySelectorAll('#tblNuevaCompra tr').length;
         if (filas < 2) {
             alertaPersonalizada('warning', 'CANASTA VACÍA...');
             return;
-        } else if (idProveedor.value == ''
-            && telefonoProveedor.value == '') {
+        } else if (idProveedor.value == '' && telefonoProveedor.value == '') {
             alertaPersonalizada('warning', 'EL PROVEEDOR ES OBLIGATORIO...');
             return;
         } else if (serie.value == '') {
             alertaPersonalizada('warning', 'LA SERIE ES OBLIGATORIO...');
             return;
         } else {
-            const url = base_url + 'compras/registrarCompra';
-            //hacer una instancia del objeto XMLHttpRequest 
-            const http = new XMLHttpRequest();
-            //Abrir una Conexion - POST - GET
-            http.open('POST', url, true);
-            //Enviar Datos
-            http.send(JSON.stringify({
-                productos: listaCarrito,
-                idProveedor: idProveedor.value,
-                serie: serie.value,
-            }));
-            //verificar estados
-            http.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    const res = JSON.parse(this.responseText);
-                    console.log(this.responseText);
-                    alertaPersonalizada(res.type, res.msg);
-                    if (res.type == 'success') {
-                        localStorage.removeItem(nombreKey);
-                        setTimeout(() => {
-                            // Swal.fire({
-                            //     title: 'Desea Generar Reporte?',
-                            //     showDenyButton: true,
-                            //     showCancelButton: true,
-                            //     cancelButtonColor: '#000',
-                            //     denyButtonColor: '#eb1623',
-                            //     confirmButtonColor: '#008cff',
-                            //     cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
-                            //     confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
-                            //     denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
-                            // }).then((result) => {
-                            //     /* Read more about isConfirmed, isDenied below */
-                            //     if (result.isConfirmed) {
-                            //         const ruta = base_url + 'compras/reporte/ticked/' + res.idCompra;
-                            //         window.open(ruta, '_blank');
-                            //     } else if (result.isDenied) {
-                            //         const ruta = base_url + 'compras/reporte/factura/' + res.idCompra;
-                            //         window.open(ruta, '_blank');
-                            //     }
-                                window.location.reload();
-                            // })
-
-                        }, 2000);
+            Swal.fire({
+                title: '¿ESTÁS SEGURO DE COMPLETAR EL INGRESO?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const url = base_url + 'compras/registrarCompra';
+                    // Hacer una instancia del objeto XMLHttpRequest 
+                    const http = new XMLHttpRequest();
+                    // Abrir una Conexion - POST - GET
+                    http.open('POST', url, true);
+                    // Enviar Datos
+                    http.send(JSON.stringify({
+                        productos: listaCarrito,
+                        idProveedor: idProveedor.value,
+                        serie: serie.value,
+                    }));
+                    // Verificar estados
+                    http.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            const res = JSON.parse(this.responseText);
+                            console.log(this.responseText);
+                            alertaPersonalizada(res.type, res.msg);
+                            if (res.type == 'success') {
+                                localStorage.removeItem(nombreKey);
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 2000);
+                            }
+                        }
                     }
                 }
-            }
+            })
         }
-
     })
+
 
     //mostrar historial
     //cargar datos con el plugin datatables
@@ -129,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { data: 'nombre' },
             { data: 'hora' },
             // { data: 'total' },
-            { data: 'acciones' },
+            // { data: 'acciones' },
         ],
         language: {
             url: base_url + 'assets/js/espanol.json'
@@ -221,9 +274,9 @@ function verReporte(idCompra) {
         cancelButtonColor: '#000',
         denyButtonColor: '#eb1623',
         confirmButtonColor: '#008cff',
-        cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
-        confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
-        denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
+        cancelButtonText: '<i class="fas fa-times-circle"></i> ' + 'Cancelar',
+        confirmButtonText: '<i class="fas fa-print"></i> ' + 'Ticked',
+        denyButtonText: '<i class="fas fa-file-pdf"></i> ' + `Factura`,
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {

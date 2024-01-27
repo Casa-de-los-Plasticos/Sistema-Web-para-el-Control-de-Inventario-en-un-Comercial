@@ -55,6 +55,71 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //completar venta
+    // btnAccionesese.addEventListener('click', function () {
+    //     let filas = document.querySelectorAll('#tblNuevaVenta tr').length;
+    //     if (filas < 2) {
+    //         alertaPersonalizada('warning', 'CANASTA VACÍA...');
+    //         return;
+    //     } else if (metodo.value == '') {
+    //         alertaPersonalizada('warning', 'EL METODO ES OBLIGATORIO...');
+    //         return;
+    //     } else {
+    //         const url = base_url + 'ventas/registrarVenta';
+    //         //hacer una instancia del objeto XMLHttpRequest 
+    //         const http = new XMLHttpRequest();
+    //         //Abrir una Conexion - POST - GET
+    //         http.open('POST', url, true);
+    //         //Enviar Datos
+    //         http.send(JSON.stringify({
+    //             productos: listaCarrito,
+    //             idCliente: idCliente.value,
+    //             metodo: metodo.value,
+    //             descuento: descuento.value,
+    //             impresion: impresion_directa.checked
+    //         }));
+    //         //verificar estados
+    //         http.onreadystatechange = function () {
+    //             if (this.readyState == 4 && this.status == 200) {
+    //                 const res = JSON.parse(this.responseText);
+    //                 console.log(this.responseText);
+
+    //                 alertaPersonalizada(res.type, res.msg);
+    //                 if (res.type == 'success') {
+    //                     localStorage.removeItem(nombreKey);
+    //                     setTimeout(() => {
+    //                         // Swal.fire({
+    //                         // title: 'Desea Generar Reporte?',
+    //                         // showDenyButton: true,
+    //                         // showCancelButton: true,
+    //                         // cancelButtonColor: '#000',
+    //                         // denyButtonColor: '#eb1623',
+    //                         // confirmButtonColor: '#008cff',
+    //                         // cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
+    //                         // confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
+    //                         // denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
+    //                         // }).then(() => {
+    //                         /* Read more about isConfirmed, isDenied below */
+    //                         // if (result.isConfirmed) {
+    //                         //     const ruta = base_url + 'ventas/reporte/ticked/' + res.idVenta;
+    //                         //     window.open(ruta, '_blank');
+    //                         // } else if (result.isDenied) {
+    //                         //     const ruta = base_url + 'ventas/reporte/factura/' + res.idVenta;
+    //                         //     window.open(ruta, '_blank');
+    //                         // }
+    //                         window.location.reload();
+    //                         // })
+
+    //                     }, 2000);
+
+    //                     // window.location.reload();
+
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    // })
+
     btnAccion.addEventListener('click', function () {
         let filas = document.querySelectorAll('#tblNuevaVenta tr').length;
         if (filas < 2) {
@@ -64,60 +129,49 @@ document.addEventListener('DOMContentLoaded', function () {
             alertaPersonalizada('warning', 'EL METODO ES OBLIGATORIO...');
             return;
         } else {
-            const url = base_url + 'ventas/registrarVenta';
-            //hacer una instancia del objeto XMLHttpRequest 
-            const http = new XMLHttpRequest();
-            //Abrir una Conexion - POST - GET
-            http.open('POST', url, true);
-            //Enviar Datos
-            http.send(JSON.stringify({
-                productos: listaCarrito,
-                idCliente: idCliente.value,
-                metodo: metodo.value,
-                descuento: descuento.value,
-                impresion: impresion_directa.checked
-            }));
-            //verificar estados
-            http.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    const res = JSON.parse(this.responseText);
-                    console.log(this.responseText);
-                    alertaPersonalizada(res.type, res.msg);
-                    if (res.type == 'success') {
-                        localStorage.removeItem(nombreKey);
-                        setTimeout(() => {
-                            // Swal.fire({
-                                // title: 'Desea Generar Reporte?',
-                                // showDenyButton: true,
-                                // showCancelButton: true,
-                                // cancelButtonColor: '#000',
-                                // denyButtonColor: '#eb1623',
-                                // confirmButtonColor: '#008cff',
-                                // cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
-                                // confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
-                                // denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
-                            // }).then(() => {
-                                /* Read more about isConfirmed, isDenied below */
-                                // if (result.isConfirmed) {
-                                //     const ruta = base_url + 'ventas/reporte/ticked/' + res.idVenta;
-                                //     window.open(ruta, '_blank');
-                                // } else if (result.isDenied) {
-                                //     const ruta = base_url + 'ventas/reporte/factura/' + res.idVenta;
-                                //     window.open(ruta, '_blank');
-                                // }
-                                window.location.reload();
-                            // })
+            Swal.fire({
+                title: '¿ESTÁS SEGURO DE COMPLETAR EL PEDIDO?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const url = base_url + 'ventas/registrarVenta';
+                    //hacer una instancia del objeto XMLHttpRequest 
+                    const http = new XMLHttpRequest();
+                    //Abrir una Conexion - POST - GET
+                    http.open('POST', url, true);
+                    //Enviar Datos
+                    http.send(JSON.stringify({
+                        productos: listaCarrito,
+                        idCliente: idCliente.value,
+                        metodo: metodo.value,
+                        descuento: descuento.value,
+                        impresion: impresion_directa.checked
+                    }));
+                    //verificar estados
+                    http.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            const res = JSON.parse(this.responseText);
+                            console.log(this.responseText);
 
-                        }, 2000);
-
-                        // window.location.reload();
-
+                            alertaPersonalizada(res.type, res.msg);
+                            if (res.type == 'success') {
+                                localStorage.removeItem(nombreKey);
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 2000);
+                            }
+                        }
                     }
                 }
-            }
+            })
         }
-
     })
+
 
     //cargar datos con el plugin datatables
     tblHistorial = $('#tblHistorial').DataTable({
@@ -144,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // { data: 'total' },
             // { data: 'nombre' },
             // { data: 'metodo' },
-            { data: 'acciones' }
+            // { data: 'acciones' }
         ],
         language: {
             url: base_url + 'assets/js/espanol.json'
@@ -173,7 +227,7 @@ function mostrarProducto() {
         // <td width="150">
         // <input type="number" class="form-control inputPrecio" data-id="${producto.id}" value="${producto.precio_venta}">
         // </td>
-        
+
         // <td>${producto.subTotalVenta}</td>
         http.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -243,9 +297,9 @@ function verReporte(idVenta) {
         cancelButtonColor: '#000',
         denyButtonColor: '#eb1623',
         confirmButtonColor: '#008cff',
-        cancelButtonText: '<i class="fas fa-times-circle"></i> '+'Cancelar',
-        confirmButtonText: '<i class="fas fa-print"></i> '+'Ticked',
-        denyButtonText: '<i class="fas fa-file-pdf"></i> '+`Factura`,
+        cancelButtonText: '<i class="fas fa-times-circle"></i> ' + 'Cancelar',
+        confirmButtonText: '<i class="fas fa-print"></i> ' + 'Ticked',
+        denyButtonText: '<i class="fas fa-file-pdf"></i> ' + `Factura`,
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {

@@ -126,7 +126,7 @@
                                 <!-- <th>Total</th> -->
                                 <th>Proveedor</th>
                                 <th>Hora</th>
-                                <th></th>
+                                <!-- <th></th> -->
                             </tr>
                         </thead>
 

@@ -70,7 +70,7 @@ class Compras extends Controller
                             $movimento = 'Ingreso N°: ' . $compra;
                             $this->model->registrarMovimiento($movimento, 'Entrada', $producto['cantidad'], $nuevaCantidad, $producto['id'], $this->id_usuario);
                         }
-                        $res = array('msg' => 'COMPRA GENERADA...', 'type' => 'success', 'idCompra' => $compra);
+                        $res = array('msg' => 'INGRESO GENERADO...', 'type' => 'success', 'idCompra' => $compra);
                     } else {
                         $res = array('msg' => 'ERROR AL CREAR COMPRA...', 'type' => 'error');
                     }
@@ -127,20 +127,20 @@ class Compras extends Controller
     public function listar()
     {
         $data = $this->model->getCompras();
-        for ($i = 0; $i < count($data); $i++) {
-            if ($data[$i]['estado'] == 1) {
-                $data[$i]['acciones'] = '<div>
-                <a class="btn btn-warning" href="#" onclick="anularCompra(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></a>
-                <button class="btn btn-info" type="button" onclick="modificarIngreso(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button> 
+        // for ($i = 0; $i < count($data); $i++) {
+        //     if ($data[$i]['estado'] == 1) {
+        //         $data[$i]['acciones'] = '<div>
+        //         <a class="btn btn-warning" href="#" onclick="anularCompra(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></a>
+        //         <button class="btn btn-info" type="button" onclick="modificarIngreso(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button> 
                 
                 
-                </div>';
-            } else {
-                $data[$i]['acciones'] = '<div>
-                    <span class="badge" style="background: #000; color: white;">Anulado</span>
-                </div>';
-            }
-        }
+        //         </div>';
+        //     } else {
+        //         $data[$i]['acciones'] = '<div>
+        //             <span class="badge" style="background: #000; color: white;">Anulado</span>
+        //         </div>';
+        //     }
+        // }
         echo json_encode($data);
         die();
     }

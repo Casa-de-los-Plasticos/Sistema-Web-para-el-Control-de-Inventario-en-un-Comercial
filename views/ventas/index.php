@@ -161,7 +161,7 @@
                                 <th>Hora</th>
                                 <!-- <th>Total</th> -->
                                 <!-- <th>Metodo</th> -->
-                                <th></th>
+                                <!-- <th></th> -->
                             </tr>
                         </thead>
 

@@ -62,9 +62,10 @@ class Ventas extends Controller
                         $result = $this->model->getProducto($producto['id']);
                         $data['id'] = $result['id'];
                         $data['nombre'] = $result['descripcion'];
-                        $data['precio'] = $producto['precio'];
+                        // $data['precio'] = $producto['precio'];
                         $data['cantidad'] = $producto['cantidad'];
-                        $subTotal = $producto['precio'] * $producto['cantidad'];
+                        $subTotal = $producto['cantidad'];
+                        // $subTotal = $producto['precio'] * $producto['cantidad'];
                         // array_push($array['productos'], $data); esto es el original
                         $datosProductos = ($data['nombre']); // sin array
                         $cantidad = ($data['cantidad']); // sin array
@@ -147,19 +148,19 @@ class Ventas extends Controller
     public function listar()
     {
         $data = $this->model->getVentas();
-        for ($i = 0; $i < count($data); $i++) {
-            if ($data[$i]['estado'] == 1) {
-                $data[$i]['acciones'] = '<div>
-                <a class="btn btn-warning" href="#" onclick="anularVenta(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></a>
-                <button class="btn btn-info" type="button" onclick="modificarSalida(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button> 
-                </div>';
-            } else {
-                $data[$i]['acciones'] = '<div>
-                <span class="badge" style="background: #000; color: white;">Anulado</span>
+        // for ($i = 0; $i < count($data); $i++) {
+        //     if ($data[$i]['estado'] == 1) {
+        //         $data[$i]['acciones'] = '<div>
+        //         <a class="btn btn-warning" href="#" onclick="anularVenta(' . $data[$i]['id'] . ')"><i class="fas fa-trash"></i></a>
+        //         <button class="btn btn-info" type="button" onclick="modificarSalida(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></button> 
+        //         </div>';
+        //     } else {
+        //         $data[$i]['acciones'] = '<div>
+        //         <span class="badge" style="background: #000; color: white;">Anulado</span>
                 
-                </div>';
-            }
-        }
+        //         </div>';
+        //     }
+        // }
         echo json_encode($data);
         die();
     }
