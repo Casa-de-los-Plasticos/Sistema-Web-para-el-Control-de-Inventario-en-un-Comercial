@@ -143,6 +143,21 @@ document.addEventListener("DOMContentLoaded", function () {
         var codigoProducto = $("#codigo").val();
         var fechaInicial = $("#fecha_inicial").val();
         var fechaFinal = $("#fecha_final").val();
+
+        // Validar si los campos están vacíos
+        if (codigoProducto.trim() === '' || fechaInicial.trim() === '' || fechaFinal.trim() === '') {
+            // Mostrar alerta con SweetAlert2
+            Swal.fire({
+                icon: 'warning',
+                title: 'HAY CAMPOS VACÍOS',
+                text: 'POR FAVOR, COMPLETE TODOS LOS CAMPOS ANTES DE CONTINUAR.',
+                timer: 3000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            });
+            return; // Detener la ejecución si hay campos vacíos
+        }
+
         $.ajax({
             type: "POST",
             url: base_url + "consolidado/consultar",
@@ -159,6 +174,75 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         });
     });
+
+    btnConsultar.addEventListener("click", function (e) {
+        e.preventDefault();
+        var codigoProducto = $("#codigo").val();
+        var fechaInicial = $("#fecha_inicial").val();
+        var fechaFinal = $("#fecha_final").val();
+
+        // Validar si los campos están vacíos
+        if (codigoProducto.trim() === '' || fechaInicial.trim() === '' || fechaFinal.trim() === '') {
+            // Mostrar alerta con SweetAlert2
+            Swal.fire({
+                icon: 'warning',
+                title: 'HAY CAMPOS VACÍOS',
+                text: 'POR FAVOR, COMPLETE TODOS LOS CAMPOS ANTES DE CONTINUAR.',
+                timer: 3000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            });
+            return; // Detener la ejecución si hay campos vacíos
+        }
+
+        if (tpi == "NaN") {
+            tpi.textContent = "";
+        }
+
+        $.ajax({
+            type: "POST",
+            url: base_url + "consolidado/consultar",
+            data: {
+                submit: false,
+                codigoProducto: codigoProducto,
+                fecha_inicial: fechaInicial,
+                fecha_final: fechaFinal,
+            },
+            success: function (response) {
+                var data = JSON.parse(response);
+                if (data.hasOwnProperty("resultados") && !isNaN(parseFloat(data["resultados"]))) {
+                    var valorNumerico = parseFloat(data["resultados"], 10);
+
+                    $("#tpi").val(valorNumerico);
+
+                } else {
+                    // Mostrar alerta con SweetAlert2 
+                    $("#tpi").val('');
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'NO SE ENCONTRARON RESULTADOS',
+                        html: `PARA EL CÓDIGO"` + '<b>' + codigoProducto + '</b>' + `" Y LAS FECHAS SELECCIONADAS "` + '<b>' + fechaInicial + ` - ` + fechaFinal + '</b>' + `"`,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        showConfirmButton: false
+
+                    });
+
+
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+                // Mostrar alerta con SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'ERROR',
+                    text: 'SE PRODUJO UN ERROR EN LA SOLICITUD, POR FAVOR, INTÉNTALO NUEVAMENTE.'
+                });
+            }
+        });
+    });
+
 
     btnNuevo.addEventListener("click", function () {
         id.value = "";

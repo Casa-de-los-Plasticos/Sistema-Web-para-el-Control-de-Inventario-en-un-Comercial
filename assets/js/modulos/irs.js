@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var nombre = $("#nombre").val();
         var fechaInicial = $("#fecha_inicial").val();
         var fechaFinal = $("#fecha_final").val();
-        $("#nombre").focus();
 
         if (nombre.trim() === '' || fechaInicial.trim() === '' || fechaFinal.trim() === '') {
             Swal.fire({
@@ -165,6 +164,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     var valorNumerico = parseFloat(data["total"], 10);
                     $("#SumaTotalSalidas").val(valorNumerico);
                 } else {
+                    $("#SumaTotalSalidas").val(''); // Limpiar el campo SumaTotalSalidas
+                    $("#fecha_inicial").val(''); // Limpiar el campo fechaInicial
+                    $("#fecha_final").val(''); // Limpiar el campo fechaFinal
+                    $("#fecha_inicial").focus();
                     Swal.fire({
                         icon: 'warning',
                         title: 'NO SE ENCONTRARON RESULTADOS',
@@ -173,8 +176,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         timerProgressBar: true,
                         showConfirmButton: false
                     });
-                    fechaInicial.textContent = '';;
-                    fechaFinal.textContent = '';;
                 }
 
             },
@@ -248,6 +249,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const cantidadInicial = parseFloat(cantidadInicialNuevo.value);
         const cantidadFinal = parseFloat(cantidadFinalNuevo.value);
         if (isNaN(cantidadInicial) || isNaN(cantidadFinal)) {
+            $("#cantidadInicialNuevo").val(''); // Limpiar el campo SumaTotalSalidas
+            $("#cantidadFinalNuevo").val(''); // Limpiar el campo fechaInicial
+            $("#cantidadMediaNuevo").val(''); // Limpiar el campo fechaFinal
+            $("#cantidadInicialNuevo").focus();
             Swal.fire({
                 icon: 'warning',
                 title: 'CAMPOS VACÍOS',
@@ -268,6 +273,21 @@ document.addEventListener('DOMContentLoaded', function () {
     btnCalcularIrs.addEventListener("click", function () {
         const numero1 = parseFloat(SumaTotalSalidas.value);
         const numero2 = parseFloat(cantidadMediaNuevo.value);
+
+        // Verificar si hay respuesta
+        if (isNaN(numero1) || isNaN(numero2)) {
+            // Mostrar alerta con SweetAlert2
+            Swal.fire({
+                icon: 'warning',
+                title: 'COMPLETA TODOS LOS CAMPOS',
+                text: 'NO SE PUEDE CALCULAR EL IRS. POR FAVOR, ASEGÚRATE DE QUE LOS CAMPOS TENGAN VALORES VÁLIDOS.',
+                timer: 3000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            });
+            return;
+        }
+
         const resultado = (numero1 / numero2).toFixed(2);
         irsNuevo.value = resultado;
     });
