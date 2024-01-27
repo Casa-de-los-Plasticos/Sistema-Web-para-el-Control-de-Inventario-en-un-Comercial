@@ -1,8 +1,7 @@
 let tblTpi;
 const formulario = document.querySelector('#formulario');
 const id = document.querySelector('#id');
-const nombre = document.querySelector('#nombre');
-const errorNombre = document.querySelector('#errorNombre');
+const nombre = document.querySelector('#nombre'); 
 const btnAccion = document.querySelector('#btnAccion');
 const btnNuevo = document.querySelector('#btnNuevo');
 
@@ -81,8 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     btnNuevo.addEventListener('click', function(){
-        id.value = '';
-        errorNombre.textContent = '';
+        id.value = ''; 
         btnAccion.textContent = 'Registrar';
         formulario.reset();
     })

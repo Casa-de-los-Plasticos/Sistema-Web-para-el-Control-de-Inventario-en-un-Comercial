@@ -184,6 +184,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Validar si los campos están vacíos
         if (codigoProducto.trim() === '' || fechaInicial.trim() === '' || fechaFinal.trim() === '') {
             // Mostrar alerta con SweetAlert2
+            $("#tpi").val('');
+
             Swal.fire({
                 icon: 'warning',
                 title: 'HAY CAMPOS VACÍOS',
@@ -246,9 +248,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnNuevo.addEventListener("click", function () {
         id.value = "";
-        errorNombre.textContent = "";
+        // errorNombre.textContent = "";
         btnAccion.textContent = "Registrar";
-        formulario.reset();
+        consultaForm.reset();
     });
     //registrar consolidado
     consultaForm.addEventListener("submit", function (e) {

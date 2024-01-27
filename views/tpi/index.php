@@ -67,7 +67,7 @@
                             <label for="stock"> Cantidad en el Sistema <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-list"></i></span>
-                                <input class="form-control" type="text" name="stock" id="stock" placeholder="Stock en Sistema" readonly>
+                                <input class="form-control" type="number" name="stock" id="stock" placeholder="Stock en Sistema" readonly>
                             </div>
                         </div>
 
@@ -75,7 +75,7 @@
                             <label for="cantidad"> Cantidad Actual <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-list"></i></span>
-                                <input class="form-control" type="text" name="cantidad" id="cantidad" placeholder="Cantidad">
+                                <input class="form-control" type="number" name="cantidad" id="cantidad" placeholder="Cantidad">
                             </div>
                             <span id="errorCantidad_Actual" class="text-danger"></span>
                         </div>
@@ -84,7 +84,7 @@
                             <label for="tpi">Tasa de Presición de Inventario <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-list"></i></span>
-                                <input class="form-control" type="text" name="tpi" id="tpi" placeholder="TPI" readonly>
+                                <input class="form-control" type="number" name="tpi" id="tpi" placeholder="TPI" readonly>
                             </div>
                         </div>
 

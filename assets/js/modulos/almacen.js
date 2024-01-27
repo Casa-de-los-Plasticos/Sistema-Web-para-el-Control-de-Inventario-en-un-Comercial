@@ -66,9 +66,7 @@ document.addEventListener('DOMContentLoaded', function(){
         order: [[0, 'asc']],
     });
     btnNuevo.addEventListener('click', function(){
-        id.value = '';
-        errorNombre.textContent = '';
-        errorNombreCorto.textContent = '';
+        id.value = ''; 
         btnAccion.textContent = 'Registrar';
         formulario.reset();
     });

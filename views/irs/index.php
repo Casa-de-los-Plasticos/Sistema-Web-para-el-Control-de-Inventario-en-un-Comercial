@@ -159,7 +159,7 @@
                             <label for="SumaTotalSalidas">Suma de Salidas<span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-list"></i></span>
-                                <input class="form-control" type="text" name="SumaTotalSalidas" id="SumaTotalSalidas" placeholder="STS" readonly>
+                                <input class="form-control" type="number" name="SumaTotalSalidas" id="SumaTotalSalidas" placeholder="STS" readonly>
                             </div>
                         </div>
 
@@ -177,7 +177,7 @@
                             <label for="cantidadInicialNuevo"> Cantidad Inicial <span class="text-danger">*</span>(<a href="#" class="text-danger" style="font-weight: bold;">Stock de Lunes</a> )</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-arrow-up-9-1"></i></span>
-                                <input class="form-control" type="text" name="cantidadInicialNuevo" id="cantidadInicialNuevo" placeholder="Cantidad Inicial">
+                                <input class="form-control" type="number" name="cantidadInicialNuevo" id="cantidadInicialNuevo" placeholder="Cantidad Inicial">
                             </div>
                             <span id="errorcantidadInicialNuevo" class="text-danger"></span>
                         </div>
@@ -186,7 +186,7 @@
                             <label for="cantidadFinalNuevo"> Cantidad Final <span class="text-danger">*</span> (<a href="#" class="text-danger" style="font-weight: bold;">Stock de Viernes</a> )</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-arrow-up-9-1"></i></span>
-                                <input class="form-control" type="text" name="cantidadFinalNuevo" id="cantidadFinalNuevo" placeholder="Stock Actual">
+                                <input class="form-control" type="number" name="cantidadFinalNuevo" id="cantidadFinalNuevo" placeholder="Stock Actual">
                             </div>
                             <span id="errorcantidadFinalNuevo" class="text-danger"></span>
                         </div>
@@ -195,7 +195,7 @@
                             <label for="cantidadMediaNuevo">Cantidad Media <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-arrow-up-9-1"></i></span>
-                                <input class="form-control" type="text" name="cantidadMediaNuevo" id="cantidadMediaNuevo" placeholder="Cantidad Media de Stock" readonly>
+                                <input class="form-control" type="number" name="cantidadMediaNuevo" id="cantidadMediaNuevo" placeholder="Cantidad Media de Stock" readonly>
                             </div>
                             <span id="errorcantidadMediaNuevo" class="text-danger"></span>
                         </div>
@@ -214,7 +214,7 @@
                             <label for="irsNuevo">índice de Rotación de Stock <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-location-crosshairs"></i></span>
-                                <input class="form-control" type="text" name="irsNuevo" id="irsNuevo" placeholder="IRS" readonly>
+                                <input class="form-control" type="number" name="irsNuevo" id="irsNuevo" placeholder="IRS" readonly>
                             </div>
                         </div>
 
@@ -222,7 +222,7 @@
                             <label>&nbsp;</label>
                             <div>
                                 <button class="btn btn-danger rounded-pill" type="button" id="btnCalcularIrs">Calcular</button>
-                                <button class="btn btn-warning rounded-pill" type="button" id="btnLimpiar">Limpiar</button>
+                                <button class="btn btn-warning rounded-pill" type="button" id="btnLimpiar">Nuevo</button>
                                 <button class="btn btn-primary rounded-pill" type="submit" id="btnGuardar">Registrar</button>
                             </div>
                         </div>

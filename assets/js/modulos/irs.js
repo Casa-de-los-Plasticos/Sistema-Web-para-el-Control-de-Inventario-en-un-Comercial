@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var fechaFinal = $("#fecha_final").val();
 
         if (nombre.trim() === '' || fechaInicial.trim() === '' || fechaFinal.trim() === '') {
+            $("#SumaTotalSalidas").val('');
             Swal.fire({
                 icon: 'warning',
                 title: 'CAMPOS OBLIGATORIOS',
@@ -164,10 +165,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     var valorNumerico = parseFloat(data["total"], 10);
                     $("#SumaTotalSalidas").val(valorNumerico);
                 } else {
-                    $("#SumaTotalSalidas").val(''); // Limpiar el campo SumaTotalSalidas
-                    $("#fecha_inicial").val(''); // Limpiar el campo fechaInicial
-                    $("#fecha_final").val(''); // Limpiar el campo fechaFinal
-                    $("#fecha_inicial").focus();
+                    // $("#SumaTotalSalidas").val(''); // Limpiar el campo SumaTotalSalidas
+                    // $("#fecha_inicial").val(''); // Limpiar el campo fechaInicial
+                    // $("#fecha_final").val(''); // Limpiar el campo fechaFinal
+                    // $("#fecha_inicial").focus();
+
                     Swal.fire({
                         icon: 'warning',
                         title: 'NO SE ENCONTRARON RESULTADOS',
@@ -249,10 +251,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const cantidadInicial = parseFloat(cantidadInicialNuevo.value);
         const cantidadFinal = parseFloat(cantidadFinalNuevo.value);
         if (isNaN(cantidadInicial) || isNaN(cantidadFinal)) {
-            $("#cantidadInicialNuevo").val(''); // Limpiar el campo SumaTotalSalidas
-            $("#cantidadFinalNuevo").val(''); // Limpiar el campo fechaInicial
+            // $("#cantidadInicialNuevo").val(''); // Limpiar el campo SumaTotalSalidas
+            // $("#cantidadFinalNuevo").val(''); // Limpiar el campo fechaInicial
             $("#cantidadMediaNuevo").val(''); // Limpiar el campo fechaFinal
-            $("#cantidadInicialNuevo").focus();
+            // $("#cantidadInicialNuevo").focus();
             Swal.fire({
                 icon: 'warning',
                 title: 'CAMPOS VACÍOS',
@@ -277,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Verificar si hay respuesta
         if (isNaN(numero1) || isNaN(numero2)) {
             // Mostrar alerta con SweetAlert2
+            $("#irsNuevo").val(''); 
             Swal.fire({
                 icon: 'warning',
                 title: 'COMPLETA TODOS LOS CAMPOS',

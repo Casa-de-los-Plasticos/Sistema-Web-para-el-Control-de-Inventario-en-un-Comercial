@@ -131,7 +131,7 @@
                     <input type="hidden" id="id" name="id">
                     <div class="row mb-3">
                         <div class="col-md-2">
-                            <label for="codigo">Buscar Por Código</label>
+                            <label for="codigo">Buscar Por Código <span class="text-danger">*</span></label>
                             <div class="input-group mb-2">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
                                 <input class="form-control" type="text" name="codigo" id="codigo" placeholder="Buscar Producto por Código">
@@ -168,7 +168,7 @@
                             <label for="tpi">Tasa de Presición de Inventario <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-list"></i></span>
-                                <input class="form-control" type="text" name="tpi" id="tpi" placeholder="TPI" readonly>
+                                <input class="form-control" type="number" name="tpi" id="tpi" placeholder="TPI" readonly>
                             </div>
                         </div>
 
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                         <div class="text-end">
-                            <button class="btn btn-danger" type="button" id="btnNuevo">Limpiar</button>
+                            <button class="btn btn-danger" type="button" id="btnNuevo">Nuevo</button>
                             <button class="btn btn-primary" type="submit" id="btnGuardar">Guardar</button>
                         </div>
                     </div>
