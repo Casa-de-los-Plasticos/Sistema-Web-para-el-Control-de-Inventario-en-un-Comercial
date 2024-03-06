@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // })
 
+
     btnAccion.addEventListener('click', function () {
         let filas = document.querySelectorAll('#tblNuevaCompra tr').length;
         if (filas < 2) {
